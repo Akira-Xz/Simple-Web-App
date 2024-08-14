@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import "react-sliding-pane/dist/react-sliding-pane.css"
 import SlidingPane from "react-sliding-pane"
 import { useNavigate } from "react-router-dom"
-import ToggleSlidingMenu from "./ToggleSlidingMenu"
+import ToggleSlidingMenu from "./toggleSlidingMenu"
 import { url } from "../../config"
 // import ToggleSlidingMenu from "../components/Global/ToggleSlidingMenu"
 
