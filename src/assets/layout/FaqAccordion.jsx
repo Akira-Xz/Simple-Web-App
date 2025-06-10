@@ -8,31 +8,32 @@ const FaqAccordion = () => {
   const faqs = [
     {
       question: "¿Qué es Simple?",
-      answer: "Simple es una app que te ayuda a gestionar tu dinero de manera fácil y segura.",
+      answer: "Simple es una aplicación móvil que puedes utilizar como herramienta para gestionar tus finanzas personales. En esta primera versión podrás utilizar la aplicación para ahorrar una cantidad en específica o crear tu fondo de emergencias.",
     },
     {
       question: "¿Para qué existe Simple®?",
-      answer: "Simple existe para facilitarte el acceso y control sobre tus finanzas.",
+      answer: "El equipo de Simple está convencido que existe aún mucho por hacer en el ámbito de la educación financiera en México. Es por esto que hemos decidido crear Simple®, una aplicación que busca ayudarte con tus finanzas y lograr un cambio real en la inclusión financiera.",
     },
     {
       question: "¿Cómo me puedo contactar con ustedes?",
-      answer: "Puedes contactarnos a través de nuestro formulario en línea o por correo electrónico.",
+      answer: "Puedes brindarnos una sugerencia en Configuración > Soporte > Sugerencias, o también, para mantenerte en contacto con nosotros, te ofrecemos los siguientes canales de comunicación:",
+      answer2: "Correo: contacto@app-simple.com Facebook: @lappsimple Instagram: @simple_app_"
     },
     {
       question: "¿A partir de qué edad puedo usar la app?",
-      answer: "La app está disponible para usuarios mayores de 18 años.",
+      answer: "Desde los 13 años en adelante puede utilizarse la app, especialmente para aprender sobre educación financiera. De 18 años en adelante la app funciona como una herramienta financiera para la gestión de las finanzas personales. ",
     },
     {
       question: "¿En qué países está disponible?",
-      answer: "Está disponible en varios países de América Latina.",
+      answer: "Actualmente la aplicación solo está disponible para México a nivel nacional. Estamos trabajando para ampliarlo a nivel Latinoamérica. ",
     },
     {
       question: "¿La empresa o la app administra mi dinero?",
-      answer: "No, Simple solo te ayuda a gestionar tu dinero, no lo administra.",
+      answer: "No realmente. Simple, o la app, no están destinadas para administrar o tener tu dinero o patrimonio. Solo te ayudamos con la gestión del mismo, sin embargo te sugerimos guardar tu dinero en una institución que brinde te proporcione una tarjeta de débito, como un banco.",
     },
     {
       question: "¿Es gratis usar la app?",
-      answer: "Sí, la app es completamente gratuita.",
+      answer: "Sí, el uso de la aplicación es totalmente gratuito.  Simple ofrece, a su vez, cursos de educación financiera (para aprender a ahorrar e invertir), estos tienen un costo y se compran en Udemy.  De igual forma, en la app existe la opción de tener el Plan Plus, que incluye clases para aprender a gestionar tus finanzas personales y un chat financiero para resolver dudas 24/7",
     },
   ];
 
@@ -71,6 +72,8 @@ const FaqAccordion = () => {
             {openIndex === index && (
               <div className="px-4 py-3 text-gray-800 bg-gray-100 rounded-b-lg mt-[-1%]">
                 {faq.answer}
+                <br />
+                {faq.answer2}
               </div>
             )}
           </div>
