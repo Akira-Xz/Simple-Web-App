@@ -20,7 +20,9 @@ export default {
         tag: '#ffff',        
       },
       fontFamily: {        
-        nameFont: ['nameFont', 'sans-serif'],     
+        nameFont: ['nameFont', 'sans-serif'], 
+        serif: ['Source Serif Pro', 'serif'],    
+        poppins: ['Poppins', 'sans-serif'],    
       },
       screens: {
         wtablet: '1024px',
