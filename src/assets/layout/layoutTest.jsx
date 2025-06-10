@@ -14,6 +14,12 @@ import playstore from "../img/playstore.webp";
 import group_50 from "../img/group_50.webp";
 import device2 from "../img/device2.webp";
 import fichas from "../img/fichas.webp";
+import FaqAccordion from "./FaqAccordion";
+import fichasHorizontales from "../img/fichasHorizontales.webp";
+import fondofinal from "../img/fondofinal.webp";
+import insta1 from "../img/insta1.webp";
+import face1 from "../img/face1.webp";
+import twitter1 from "../img/twitter1.webp";
 
 const LayoutTest = (props) => {
   const { children } = props;
@@ -294,6 +300,180 @@ const LayoutTest = (props) => {
                   virtuales por cada paso <br />
                   que des.
                 </p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-[40%]">
+            <h1 className="text-7xl font-poppins font-bold text-center text-[#4DA4FF] mb-[5%]">
+              Preguntas frecuentes
+            </h1>
+            <FaqAccordion></FaqAccordion>
+          </div>
+        </div>
+        <img src={fichasHorizontales} alt="" className="w-[90%] mx-auto" />
+        <div
+          className="h-[1100px] bg-no-repeat bg-center bg-contain mt-[2%] flex flex-col  items-center"
+          style={{
+            backgroundImage: `url(${fondofinal})`,
+            backgroundSize: "calc(100% + 15px) auto",
+          }}
+        >
+          <h1 className="text-white font-bold text-7xl pt-[5%] pb-[3%] px-[25%] text-center font-poppins">
+            Ya diste el primer paso, ahora ve por más
+          </h1>
+          <p className="text-white font-regular text-md pb-[3%] px-[35%] text-center font-poppins">
+            cursos para aprender a ahorrar e invertir, aprender a ahorrar es
+            solo el comienzo. Descubre nuestros cursos en Udemy y domina tus
+            finanzas con contenido práctico, útil y hecho para ti.
+          </p>
+          <button className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px] h-[3rem] mb-[15%]">
+            Saber más
+          </button>
+          <div className="grid grid-cols-2 gap-10 justify-between">
+            {/* Simple Logo Section */}
+            <div className="flex flex-col items-start text-left ">
+              <img src={logo1} alt="Simple Logo" className="mb-4" />
+              <p className="text-white font-poppins mb-4">Conoce más</p>
+              <div className="flex gap-3 my-4 align-center">
+                <a href="#" className="text-black">
+                  <img src={insta1} alt="" />
+                </a>
+                <a href="#" className="text-black">
+                  <img src={face1} alt="" />
+                </a>
+                <a href="#" className="text-black">
+                  <img src={twitter1} alt="" />
+                </a>
+              </div>
+              <button className="bg-transparent rounded-3xl text-white font-bold w-[256px] h-[3rem] mb-[3%] border-[3px] hover:bg-[#F0F0F0]">
+                Descargar App
+              </button>
+              <p className="text-white text-lg">
+                © 2025 SimpleApp. Todos los derechos reservados.
+              </p>
+            </div>
+
+            {/* Footer Links */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+              {/* Términos y privacidad */}
+              <div>
+                <h4 className="font-semibold mb-2 font-poppins text-[white] ">
+                  Términos y privacidad
+                </h4>
+                <ul>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Términos de uso
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Política de privacidad
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Ayuda y soporte */}
+              <div>
+                <h3 className="font-semibold mb-2 font-poppins text-[white]">
+                  Ayuda y soporte
+                </h3>
+                <ul>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Centro de ayuda
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Preguntas frecuentes
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Soporte técnico
+                    </a>
+                  </li>
+                </ul>
+
+                <h3 className="font-semibold mb-2 font-poppins text-[white] mt-[10%]">
+                  Aplicaciones
+                </h3>
+                <ul>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Disponible para Android
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Disponible para iOS
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Social */}
+              <div>
+                <h4 className="font-semibold mb-2 font-poppins text-[white]">
+                  Social
+                </h4>
+                <ul>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      TikTok
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="hover:underline font-poppins text-[white] font-light"
+                    >
+                      YouTube
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
