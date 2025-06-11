@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Home from "../components/home";
 import fondo_1 from "../img/fondo_1.webp";
 import logo1 from "../img/logo1.webp";
@@ -22,9 +23,29 @@ import insta1 from "../img/insta1.webp";
 import face1 from "../img/face1.webp";
 import twitter1 from "../img/twitter1.webp";
 import deviceshadowx4 from "../img/deviceshadowx4.webp";
+import finanzasatr from "../img/finanzasatr.webp";
+import aprendeAA from "../img/aprendeAA.webp";
+import fichasMovil from "../img/fichasMovil.webp";
+import finalMovil from "../img/finalMovil.webp";
 
 const LayoutTest = (props) => {
   const { children } = props;
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Función para actualizar el estado con el ancho de la ventana
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Agregar el event listener para el cambio de tamaño
+    window.addEventListener("resize", handleResize);
+
+    // Limpiar el event listener cuando el componente se desmonte
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div>
@@ -92,262 +113,244 @@ const LayoutTest = (props) => {
         </div>
 
         <div className="text-center text-2xl italic font-serif px-4 sm:px-8 md:px-12 ">
-  <p>
-    <span className="bg-blue-100 text-blue-900 p-1 inline-block rounded-lg">
-      “Ahorrar no es solo guardar dinero. Es construir la vida que
-      quieres.”
-    </span>
-    <br />
-    <span className="bg-blue-100 text-blue-900 p-1 inline-block rounded-lg">
-      Es tomar el control, reducir el estrés y darle propósito a cada
-      peso.
-    </span>
-    <br />
-    <span className="bg-blue-100 text-blue-900 p-1 inline-block rounded-lg">
-      ¿Quién quieres ser, y cómo pueden tus finanzas ayudarte a llegar
-      ahí?”
-    </span>
-  </p>
-</div>
-
+          <p>
+            <span className="bg-blue-100 text-blue-900 p-1 inline-block rounded-lg">
+              “Ahorrar no es solo guardar dinero. Es construir la vida que
+              quieres.”
+            </span>
+            <br />
+            <span className="bg-blue-100 text-blue-900 p-1 inline-block rounded-lg">
+              Es tomar el control, reducir el estrés y darle propósito a cada
+              peso.
+            </span>
+            <br />
+            <span className="bg-blue-100 text-blue-900 p-1 inline-block rounded-lg">
+              ¿Quién quieres ser, y cómo pueden tus finanzas ayudarte a llegar
+              ahí?”
+            </span>
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 items-center justify-items-center mt-[10%] mb-[15%]">
-  <div className="text-center">
-    <img
-      src={luca1}
-      alt="Imagen 1"
-      className="w-48 h-auto rounded-lg justify-self-center"
-    />
-    <h3 className="mt-2 text-2xl font-semibold font-poppins">
-      A tu ritmo.
-    </h3>
-    <p className="mt-1 text-gray-600 text-lg font-poppins font-regular px-[16%]">
-      Personaliza tu forma de ahorrar y de administrar tus finanzas de
-      manera sencilla. Personaliza tu perfil, personaliza a Luca,
-      personaliza tu experiencia
-    </p>
-  </div>
-
-  <div className="text-center">
-    <img
-      src={luca4}
-      alt="Imagen 2"
-      className="w-48 h-auto rounded-lg justify-self-center"
-    />
-    <h3 className="mt-2 text-2xl font-semibold font-poppins">
-      Estamos contigo
-    </h3>
-    <p className="mt-1 text-gray-600 text-lg font-poppins font-regular px-[16%]">
-      Siempre vamos a cuidarte a ti y a tu dinero, por lo que te
-      enviaremos recordatorios para que ahorres o gastes de manera
-      inteligente.
-    </p>
-  </div>
-
-  <div className="text-center">
-    <img
-      src={luca2}
-      alt="Imagen 3"
-      className="w-48 h-auto rounded-lg justify-self-center"
-    />
-    <h3 className="mt-2 text-2xl font-semibold font-poppins">
-      FINANZAS SIMPLES
-    </h3>
-    <p className="mt-1 text-gray-600 text-lg font-poppins font-regular px-[16%]">
-      Gestiona tu dinero sin complicaciones. Ahorra, controla y mejora
-      tus finanzas desde una sola app.
-    </p>
-  </div>
-</div>
-
-        <div
-          className="h-[1080px] bg-no-repeat  bg-center bg-contain"
-          style={{
-            backgroundImage: `url(${frame_393_1})`,
-            backgroundSize: "calc(100% + 5px) auto",
-          }}
-        >
-          <div className="flex justify-center align-center p-20 px-[16%] text-white font-poppins font-bold text-7xl">
-            <p className="text-center">
-              Finanzas a tu <br /> ritmo,sin horarios ni <br /> fronteras
+          <div className="text-center">
+            <img
+              src={luca1}
+              alt="Imagen 1"
+              className="w-48 h-auto rounded-lg justify-self-center"
+            />
+            <h3 className="mt-2 text-2xl font-semibold font-poppins">
+              A tu ritmo.
+            </h3>
+            <p className="mt-1 text-gray-600 text-lg font-poppins font-regular px-[16%]">
+              Personaliza tu forma de ahorrar y de administrar tus finanzas de
+              manera sencilla. Personaliza tu perfil, personaliza a Luca,
+              personaliza tu experiencia
             </p>
           </div>
-          <div className="flex justify-center mt-[25px]">
-            <button className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-gray-300 shadow-md">
-              <img src={apple} alt="Apple logo" className="w-12 h-auto" />
+
+          <div className="text-center">
+            <img
+              src={luca4}
+              alt="Imagen 2"
+              className="w-48 h-auto rounded-lg justify-self-center"
+            />
+            <h3 className="mt-2 text-2xl font-semibold font-poppins">
+              Estamos contigo
+            </h3>
+            <p className="mt-1 text-gray-600 text-lg font-poppins font-regular px-[16%]">
+              Siempre vamos a cuidarte a ti y a tu dinero, por lo que te
+              enviaremos recordatorios para que ahorres o gastes de manera
+              inteligente.
+            </p>
+          </div>
+
+          <div className="text-center">
+            <img
+              src={luca2}
+              alt="Imagen 3"
+              className="w-48 h-auto rounded-lg justify-self-center"
+            />
+            <h3 className="mt-2 text-2xl font-semibold font-poppins">
+              FINANZAS SIMPLES
+            </h3>
+            <p className="mt-1 text-gray-600 text-lg font-poppins font-regular px-[16%]">
+              Gestiona tu dinero sin complicaciones. Ahorra, controla y mejora
+              tus finanzas desde una sola app.
+            </p>
+          </div>
+        </div>
+
+        <div
+          className="h-[1080px] bg-no-repeat bg-center bg-cover"
+          style={{
+            backgroundImage: `url(${
+              windowWidth > 640 ? frame_393_1 : finanzasatr
+            })`, // Cambiar la imagen dependiendo del tamaño de la ventana
+          }}
+        >
+          <div className="flex justify-center items-center p-8 sm:p-12 md:p-20 text-white font-poppins font-bold text-4xl sm:text-[32px] md:text-7xl">
+            <p className="text-center">
+              Finanzas a tu <br /> ritmo, sin horarios ni <br /> fronteras
+            </p>
+          </div>
+          <div className="flex flex-col items-center gap-3 mt-2 sm:mt-4 md:mt-10 md:flex-row md:justify-center md:gap-4">
+            <button className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white border border-gray-300 shadow-md w-auto">
+              <img src={apple} alt="Apple logo" className="w-6 sm:w-8 h-auto" />
               <div className="text-left leading-tight">
-                <p className="text-lg font-poppins font-medium">
+                <p className="text-xs sm:text-sm font-poppins font-medium">
                   Disponible en la
                 </p>
-                <p className="text-lg font-poppins font-medium">App Store</p>
+                <p className="text-xs sm:text-sm font-poppins font-medium">
+                  App Store
+                </p>
               </div>
             </button>
-            <button className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white border border-gray-300 shadow-md ml-[16px]">
+
+            <button className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white border border-gray-300 shadow-md w-auto">
               <img
                 src={playstore}
                 alt="Playstore logo"
-                className="w-12 h-auto"
+                className="w-6 sm:w-8 h-auto"
               />
               <div className="text-left leading-tight">
-                <p className="text-lg font-poppins font-medium">
+                <p className="text-xs sm:text-sm font-poppins font-medium">
                   Disponible en la
                 </p>
-                <p className="text-lg font-poppins font-medium">Google Play</p>
+                <p className="text-xs sm:text-sm font-poppins font-medium">
+                  Google Play
+                </p>
               </div>
             </button>
           </div>
         </div>
+
         <div
-  className="h-screen bg-no-repeat bg-center bg-contain p-[16px] sm:p-[50px] flex flex-col md:flex-row items-center justify-between"
-  style={{
-    backgroundImage: `url(${group_50})`,
-    backgroundSize: "calc(100% + 5px) 100%",
-  }}
->
-  <div className="text-white font-poppins flex flex-col items-center md:items-start">
-    <h1 className="font-bold text-[40px] sm:text-[80px] leading-[1.1] tracking-wide mb-8 text-center md:text-left">
-      Aprende a ahorrar <br />
-      sin aburrirte
-    </h1>
+          className="h-[1080px] bg-no-repeat bg-center bg-cover p-[16px] sm:p-[50px] flex flex-col md:flex-row items-center justify-between"
+          style={{
+            backgroundImage: `url(${group_50})`,
+            backgroundSize: "calc(100% + 5px) 100%",
+          }}
+        >
+          <div className="text-white font-poppins flex flex-col items-center md:items-start">
+            <h1 className="font-bold text-[40px] sm:text-[80px] leading-[1.1] tracking-wide mb-8 text-center md:text-left">
+              Aprende a ahorrar <br />
+              sin aburrirte
+            </h1>
 
-    <p className="font-medium text-2xl sm:text-5xl leading-tight mb-10 text-center md:text-left">
-      Simple convierte la educación <br />
-      financiera en una experiencia <br />
-      divertida.
-    </p>
+            <p className="font-medium text-2xl sm:text-5xl leading-tight mb-10 text-center md:text-left">
+              Simple convierte la educación <br />
+              financiera en una experiencia <br />
+              divertida.
+            </p>
 
-    <p className="text-base sm:text-lg leading-relaxed text-center md:text-left">
-      Con cursos{" "}
-      <span className="font-semibold">
-        dinámicos, retos y recompensas virtuales, <br />
-        ahorrar y aprender
-      </span>{" "}
-      sobre finanzas nunca fue tan fácil (ni <br />
-      tan entretenido).
-    </p>
-  </div>
+            <p className="text-base sm:text-lg leading-relaxed text-center md:text-left">
+              Con cursos{" "}
+              <span className="font-semibold">
+                dinámicos, retos y recompensas virtuales, <br />
+                ahorrar y aprender
+              </span>{" "}
+              sobre finanzas nunca fue tan fácil (ni <br />
+              tan entretenido).
+            </p>
+          </div>
 
-  <div className="mt-[20px] sm:mt-[50px]">
-  {/* Imagen para pantallas móviles */}
-  <img
-    src={device3} // Asegúrate de tener una imagen llamada deviceMobile
-    alt="Device Mobile"
-    className="w-[90%] sm:hidden" // Esta imagen se muestra solo en pantallas pequeñas
-  />
-  
-  {/* Imagen para pantallas más grandes */}
-  <img
-    src={device2} // Imagen para pantallas grandes
-    alt="Device"
-    className="w-[90%] sm:w-[auto] hidden sm:block" // Esta imagen se muestra solo en pantallas grandes
-  />
-</div>
+          <div className="mt-[20px] sm:mt-[50px] flex justify-center items-center">
+            {/* Imagen para pantallas móviles */}
+            <img
+              src={device3}
+              alt="Device Mobile"
+              className="w-[90%] sm:hidden"
+            />
 
-</div>
+            {/* Imagen para pantallas más grandes */}
+            <img
+              src={device2}
+              alt="Device"
+              className="hidden sm:block w-[90%] sm:w-[400px] md:w-[450px] lg:w-[500px] xl:w-[550px] 2xl:w-[600px]"
+            />
+          </div>
+        </div>
 
+        <div
+          className="h-[3173px] bg-no-repeat bg-center sm:bg-cover p-12"
+          style={{
+            backgroundImage: `url(${windowWidth > 640 ? fichas : fichasMovil})`,
+            backgroundSize: windowWidth > 640 ? "100% auto" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
+          }}
+        >
+          <div className="font-poppins text-center">
+            <h1 className="text-[#4DA4FF] font-bold text-[44px] sm:text-[80px] md:px-[20%] px-[1%] pt-[5%] pb-[3%]">
+              ¡El primer juego que te ayuda a tener más dinero!
+            </h1>
+            <p className="text-[black] font-medium text-[18px] px-8 sm:text-[24px] md:px-[21%] px-[4%]">
+              Diseñamos Simple para que aprender finanzas personales no sea una carga, sino un reto que disfrutes completar todos los días. Todo está pensado para que avances a tu ritmo y construyas hábitos reales.
+            </p>
+          </div>
 
- <div
-  className="h-[3173px] bg-no-repeat bg-center bg-contain"
-  style={{
-    backgroundImage: `url(${fichas})`,
-    backgroundSize: "100% auto",
-  }}
->
-  <div className="font-poppins text-center">
-    <h1 className="text-[#4DA4FF] font-bold text-[40px] sm:text-[80px] pt-[5%] pb-[3%]">
-      ¡El primer juego que te <br />
-      ayuda a tener más dinero!
-    </h1>
-    <p className="text-[black] font-medium text-[16px] sm:text-[24px]">
-      Diseñamos Simple para que aprender finanzas personales no sea una
-      carga, sino un reto <br />
-      que disfrutes completar todos los días. Todo está pensado para que
-      avances a tu ritmo y <br />
-      construyas hábitos reales.
-    </p>
-  </div>
+          {/* Grid de contenido */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-[175px]">
+            {/* Primer bloque */}
+            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] sm:whitespace-normal whitespace-nowrap">
+                Retos semanales
+              </h2>
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[14%] pt-[20px]">
+                Supera misiones simples que te ayudan a ahorrar sin darte cuenta.
+              </p>
+            </div>
 
-  {/* Grid de contenido */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-[175px]">
-    {/* Primer bloque */}
-    <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
-      <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF]">
-        Retos <br />
-        semanales
-      </h2>
-      <p className="font-medium text-[16px] sm:text-[24px] text-[black] pt-[20px]">
-        Supera misiones simples <br />
-        que te ayudan a ahorrar <br />
-        sin darte cuenta.
-      </p>
-    </div>
+            {/* Segundo bloque */}
+            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] sm:whitespace-normal whitespace-nowrap">
+                Sistema de logros
+              </h2>
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[14%] pt-[20px]">
+                Gana trofeos y premios virtuales por cada paso que des.
+              </p>
+            </div>
 
-    {/* Segundo bloque */}
-    <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
-      <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF]">
-        Sistema de <br />
-        logros
-      </h2>
-      <p className="font-medium text-[16px] sm:text-[24px] text-[black] pt-[20px]">
-        Gana trofeos y premios <br />
-        virtuales por cada paso <br />
-        que des.
-      </p>
-    </div>
+            {/* Tercer bloque */}
+            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] sm:whitespace-normal whitespace-nowrap">
+                Cursos interactivos
+              </h2>
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[14%] pt-[20px]">
+                Aprende desde lo más básico hasta estrategias más avanzadas.
+              </p>
+            </div>
+          </div>
 
-    {/* Tercer bloque */}
-    <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
-      <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF]">
-        Cursos <br />
-        Interactivos
-      </h2>
-      <p className="font-medium text-[16px] sm:text-[24px] text-[black] pt-[20px]">
-        Aprende desde lo más <br />
-        básico hasta estrategias <br />
-        más avanzadas.
-      </p>
-    </div>
-  </div>
+          {/* Segundo grupo de bloques con 2 columnas */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-[175px]">
+            {/* Primer bloque */}
+            <div className="font-poppins text-center pl-4 sm:pl-[40px] md:pl-[250px]">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[30%] sm:whitespace-normal whitespace-nowrap">
+                Comparte y compite
+              </h2>
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[30%] px-[10%] pt-[20px]">
+                Rétate con amigos y descubre quién ahorra mejor.
+              </p>
+            </div>
 
-  {/* Segundo grupo de bloques con 2 columnas */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-[175px]">
-    {/* Primer bloque */}
-    <div className="font-poppins text-center pl-4 sm:pl-[40px] md:pl-[250px]">
-      <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF]">
-        Retos <br />
-        semanales
-      </h2>
-      <p className="font-medium text-[16px] sm:text-[24px] text-[black] pt-[20px]">
-        Supera misiones simples <br />
-        que te ayudan a ahorrar <br />
-        sin darte cuenta.
-      </p>
-    </div>
+            {/* Segundo bloque */}
+            <div className="font-poppins text-center pr-4 sm:pr-[40px] md:pr-[250px]">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[30%] sm:whitespace-normal whitespace-nowrap">
+                Seguimiento de progreso
+              </h2>
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[30%] px-[10%] pt-[20px]">
+                Visualiza tu avance y celebra tus mejoras financieras.
+              </p>
+            </div>
+          </div>
 
-    {/* Segundo bloque */}
-    <div className="font-poppins text-center pr-4 sm:pr-[40px] md:pr-[250px]">
-      <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF]">
-        Sistema de <br />
-        logros
-      </h2>
-      <p className="font-medium text-[16px] sm:text-[24px] text-[black] pt-[20px]">
-        Gana trofeos y premios <br />
-        virtuales por cada paso <br />
-        que des.
-      </p>
-    </div>
-  </div>
-
-  {/* Sección de Preguntas Frecuentes */}
-  <div className="mt-[40%] px-4 sm:px-8 md:px-[175px]">
-    <h1 className="text-4xl sm:text-7xl font-poppins font-bold text-center text-[#4DA4FF] mb-[5%]">
-      Preguntas frecuentes
-    </h1>
-    <FaqAccordion></FaqAccordion>
-  </div>
-</div>
-
-
+          {/* Sección de Preguntas Frecuentes */}
+          <div className="mt-[40%] px-4 sm:px-8 md:px-[175px]">
+            <h1 className="text-4xl sm:text-7xl font-poppins font-bold text-center text-[#4DA4FF] mb-[5%]">
+              Preguntas frecuentes
+            </h1>
+            <FaqAccordion></FaqAccordion>
+          </div>
+        </div>
 
         <img src={fichasHorizontales} alt="" className="w-[90%] mx-auto" />
         <div
