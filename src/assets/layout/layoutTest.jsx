@@ -32,7 +32,6 @@ import movilgroup from "../img/movilgroup.webp";
 import terminos from "../Documentos/terminos.pdf";
 import privacidad from "../Documentos/privacidad.pdf";
 
-
 const LayoutTest = (props) => {
   const { children } = props;
 
@@ -53,7 +52,7 @@ const LayoutTest = (props) => {
 
   return (
     <>
-      <div  className="max-w-[1888px] mx-auto my-auto">
+      <div className="max-w-[1888px] mx-auto my-auto">
         <div
           className="sm:h-[1200px] bg-no-repeat sm:bg-center h-[900px] bg-bottom"
           style={{ backgroundImage: `url(${fondo_1})` }}
@@ -291,10 +290,10 @@ const LayoutTest = (props) => {
           }}
         >
           <div className="font-poppins text-center sm:text-left">
-            <h1 className="text-[#4DA4FF] font-bold text-[44px] sm:text-[80px] md:px-[20%] px-[1%] pt-[5%] pb-[3%]">
+            <h1 className="text-[#4DA4FF] font-bold text-[44px] text-center sm:text-[80px] md:px-[18%] px-[1%] mt-[-45px] pb-[3%]">
               ¡El primer juego que te ayuda a tener más dinero!
             </h1>
-            <p className="text-[black] font-medium text-[18px] px-8 sm:text-[24px] md:px-[21%] px-[4%]">
+            <p className="text-[black] font-medium text-[18px] text-center px-8 sm:text-[24px] md:px-[19%] px-[4%]">
               Diseñamos Simple para que aprender finanzas personales no sea una
               carga, sino un reto que disfrutes completar todos los días. Todo
               está pensado para que avances a tu ritmo y construyas hábitos
@@ -305,32 +304,32 @@ const LayoutTest = (props) => {
           {/* Grid de contenido */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-[175px]">
             {/* Primer bloque */}
-            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] sm:whitespace-normal whitespace-nowrap">
+            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px] flex flex-col h-full">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] mt-[-75px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
                 Retos semanales
               </h2>
-              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[14%] pt-[20px]">
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[1%] pt-[20px]">
                 Supera misiones simples que te ayudan a ahorrar sin darte
                 cuenta.
               </p>
             </div>
 
             {/* Segundo bloque */}
-            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] sm:whitespace-normal whitespace-nowrap">
+            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px] flex flex-col h-full">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] mt-[45px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
                 Sistema de logros
               </h2>
-              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[14%] pt-[20px]">
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[1%] pt-[20px]">
                 Gana trofeos y premios virtuales por cada paso que des.
               </p>
             </div>
 
             {/* Tercer bloque */}
-            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px]">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] sm:whitespace-normal whitespace-nowrap">
+            <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px] flex flex-col h-full">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] mt-[100px] md:mt-[30px] sm:whitespace-normal whitespace-nowrap">
                 Cursos interactivos
               </h2>
-              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[14%] pt-[20px]">
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[10%] px-[5%] pt-[20px]">
                 Aprende desde lo más básico hasta estrategias más avanzadas.
               </p>
             </div>
@@ -339,21 +338,21 @@ const LayoutTest = (props) => {
           {/* Segundo grupo de bloques con 2 columnas */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-[175px]">
             {/* Primer bloque */}
-            <div className="font-poppins text-center pl-4 sm:pl-[40px] md:pl-[250px]">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[30%] sm:whitespace-normal whitespace-nowrap">
+            <div className="font-poppins text-center pl-4 sm:pl-[40px] md:pl-[250px] flex flex-col h-full">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[30%] mt-[-80px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
                 Comparte y compite
               </h2>
-              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[30%] px-[10%] pt-[20px]">
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[25%] px-[10%] pt-[20px]">
                 Rétate con amigos y descubre quién ahorra mejor.
               </p>
             </div>
 
             {/* Segundo bloque */}
-            <div className="font-poppins text-center pr-4 sm:pr-[40px] md:pr-[250px]">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[30%] sm:whitespace-normal whitespace-nowrap">
+            <div className="font-poppins text-center pr-4 sm:pr-[40px] md:pr-[250px] flex flex-col h-full">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[25%] mt-[100px] md:mt-[30px] sm:whitespace-normal whitespace-nowrap ml-[-20px]">
                 Seguimiento de progreso
               </h2>
-              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[30%] px-[10%] pt-[20px]">
+              <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[25%] px-[10%] pt-[20px]">
                 Visualiza tu avance y celebra tus mejoras financieras.
               </p>
             </div>
@@ -382,7 +381,8 @@ const LayoutTest = (props) => {
             backgroundImage: `url(${
               windowWidth > 640 ? fondofinal : finalMovil
             })`,
-            backgroundSize: windowWidth > 640 ? "100% auto" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
+            backgroundSize:
+              windowWidth > 640 ? "calc(100% + 20px) 100%" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
           }}
         >
           <h1 className="text-white font-bold leading-relaxed text-5xl sm:text-7xl pt-[5%] pb-[3%] px-[4%] text-center font-poppins md:px-[25%]">
