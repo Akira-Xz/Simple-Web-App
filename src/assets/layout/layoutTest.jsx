@@ -27,6 +27,8 @@ import finanzasatr from "../img/finanzasatr.webp";
 import aprendeAA from "../img/aprendeAA.webp";
 import fichasMovil from "../img/fichasMovil.webp";
 import finalMovil from "../img/finalMovil.webp";
+import downloadB from "../img/downloadB.webp";
+import movilgroup from "../img/movilgroup.webp";
 
 const LayoutTest = (props) => {
   const { children } = props;
@@ -50,16 +52,23 @@ const LayoutTest = (props) => {
     <>
       <div>
         <div
-          className="h-[1200px] bg-no-repeat bg-center"
+          className="sm:h-[1200px] bg-no-repeat sm:bg-center h-[900px] bg-bottom"
           style={{ backgroundImage: `url(${fondo_1})` }}
         >
           <div className="justify-between flex p-12">
-            <img src={logo1} alt="" className="lg:w-32 sm:w-24" />
-            <button className="bg-[white] rounded-3xl text-[#1685FE] font-semibold w-[256px]">
-              Descargar
+            <img src={logo1} alt="" className="sm:w-32 w-24" />
+            <button className="bg-[white] rounded-3xl text-[#1685FE] font-semibold sm:w-[256px] w-[75px]">
+              <img
+                src={downloadB}
+                alt="Descargar"
+                className="w-8 h-auto justify-self-center sm:hidden"
+              />
+              <span className="hidden sm:inline-block">Descargar</span>
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-items-center px-8 py-12 relative">
+          <img src={movilgroup} alt="" className="block sm:hidden mx-auto" />
+
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 items-center justify-items-center px-8 py-12 relative">
             {/* Columna 1: Texto AHORRAR y ES */}
             <div className="col-span-1 text-white font-bold text-center relative">
               {/* Texto AHORRAR: Posicionado un poco arriba de la imagen */}
@@ -78,12 +87,12 @@ const LayoutTest = (props) => {
               <img
                 src={devicenoshadow} // Imagen del teléfono
                 alt="Phone App"
-                className="w-64 sm:w-80 "
+                className="w-64 sm:w-80 max-w-full"
               />
             </div>
 
             {/* Columna 3: Texto SIMPLE + QR */}
-            <div className="col-span-1 text-white text-center left-[30%] transform -translate-x-[45%] ">
+            <div className="col-span-1 text-white text-center left-[30%] transform -translate-x-[45%]">
               <img src={perfil} alt="" className="w-16 sm:w-32 mx-auto" />
               <div className="text-6xl sm:text-8xl md:text-9xl font-bold mb-4">
                 SIMPLE
@@ -231,19 +240,19 @@ const LayoutTest = (props) => {
             backgroundSize: "calc(100% + 5px) 100%",
           }}
         >
-          <div className="text-white font-poppins flex flex-col items-center md:items-start">
-            <h1 className="font-bold text-[40px] sm:text-[80px] leading-[1.1] tracking-wide mb-8 text-center md:text-left">
+          <div className="text-white font-poppins flex flex-col items-center md:items-start sm:px-[0%] px-[10%]">
+            <h1 className="font-bold text-[40px] sm:text-[80px] leading-[1.1] tracking-wide mb-8 text-left md:text-left">
               Aprende a ahorrar <br />
               sin aburrirte
             </h1>
 
-            <p className="font-medium text-2xl sm:text-5xl leading-tight mb-10 text-center md:text-left">
+            <p className="font-medium text-2xl sm:text-5xl leading-tight mb-10 text-left md:text-left">
               Simple convierte la educación <br />
               financiera en una experiencia <br />
               divertida.
             </p>
 
-            <p className="text-base sm:text-lg leading-relaxed text-center md:text-left">
+            <p className="text-base sm:text-lg leading-relaxed text-left md:text-left">
               Con cursos{" "}
               <span className="font-semibold">
                 dinámicos, retos y recompensas virtuales, <br />
@@ -272,18 +281,21 @@ const LayoutTest = (props) => {
         </div>
 
         <div
-          className="h-[3173px] bg-no-repeat bg-center sm:bg-cover p-12"
+          className="h-[2490px] bg-no-repeat bg-center sm:bg-cover p-12 sm:h-[3173px]"
           style={{
             backgroundImage: `url(${windowWidth > 640 ? fichas : fichasMovil})`,
             backgroundSize: windowWidth > 640 ? "100% auto" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
           }}
         >
-          <div className="font-poppins text-center">
+          <div className="font-poppins text-center sm:text-left">
             <h1 className="text-[#4DA4FF] font-bold text-[44px] sm:text-[80px] md:px-[20%] px-[1%] pt-[5%] pb-[3%]">
               ¡El primer juego que te ayuda a tener más dinero!
             </h1>
             <p className="text-[black] font-medium text-[18px] px-8 sm:text-[24px] md:px-[21%] px-[4%]">
-              Diseñamos Simple para que aprender finanzas personales no sea una carga, sino un reto que disfrutes completar todos los días. Todo está pensado para que avances a tu ritmo y construyas hábitos reales.
+              Diseñamos Simple para que aprender finanzas personales no sea una
+              carga, sino un reto que disfrutes completar todos los días. Todo
+              está pensado para que avances a tu ritmo y construyas hábitos
+              reales.
             </p>
           </div>
 
@@ -295,7 +307,8 @@ const LayoutTest = (props) => {
                 Retos semanales
               </h2>
               <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[14%] pt-[20px]">
-                Supera misiones simples que te ayudan a ahorrar sin darte cuenta.
+                Supera misiones simples que te ayudan a ahorrar sin darte
+                cuenta.
               </p>
             </div>
 
@@ -352,31 +365,41 @@ const LayoutTest = (props) => {
           </div>
         </div>
 
-        <img src={fichasHorizontales} alt="" className="w-[90%] mx-auto" />
+        <img
+          src={fichasHorizontales}
+          alt=""
+          className="w-[90%] mx-auto hidden md:block "
+        />
+
         <div
-          className="h-[1100px] bg-no-repeat bg-center bg-contain mt-[2%] flex flex-col  items-center"
+          className="md:h-[1100px] bg-no-repeat bg-center bg-contain mt-[2%] flex flex-col items-center h-[2547px]"
           style={{
-            backgroundImage: `url(${fondofinal})`,
-            backgroundSize: "calc(100% + 15px) auto",
+            backgroundImage: `url(${
+              windowWidth > 640 ? fondofinal : finalMovil
+            })`,
+            backgroundSize: windowWidth > 640 ? "100% auto" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
           }}
         >
-          <h1 className="text-white font-bold text-7xl pt-[5%] pb-[3%] px-[25%] text-center font-poppins">
+          <h1 className="text-white font-bold leading-relaxed text-5xl sm:text-7xl pt-[5%] pb-[3%] px-[4%] text-center font-poppins md:px-[25%]">
             Ya diste el primer paso, ahora ve por más
           </h1>
-          <p className="text-white font-regular text-md pb-[3%] px-[35%] text-center font-poppins">
-            cursos para aprender a ahorrar e invertir, aprender a ahorrar es
+
+          <p className="text-white font-regular leading-relaxed text-xl pb-[5%] px-[15%] text-center font-poppins sm:px-[35%]">
+            Cursos para aprender a ahorrar e invertir, aprender a ahorrar es
             solo el comienzo. Descubre nuestros cursos en Udemy y domina tus
             finanzas con contenido práctico, útil y hecho para ti.
           </p>
-          <button className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px] h-[3rem] mb-[15%]">
+
+          <button className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px] mb-[800px] h-[3rem] md:mb-[15%]">
             Saber más
           </button>
-          <div className="grid grid-cols-2 gap-10 justify-between">
+
+          <div className="flex flex-col sm:flex-row sm:grid sm:grid-cols-2 gap-10 justify-around w-full">
             {/* Simple Logo Section */}
-            <div className="flex flex-col items-start text-left ">
+            <div className="flex flex-col items-center text-center sm:items-start sm:text-left px-[20%]">
               <img src={logo1} alt="Simple Logo" className="mb-4" />
               <p className="text-white font-poppins mb-4">Conoce más</p>
-              <div className="flex gap-3 my-4 align-center">
+              <div className="flex gap-3 my-4 justify-center sm:justify-start">
                 <a href="#" className="text-[black]">
                   <img src={insta1} alt="" />
                 </a>
@@ -390,16 +413,16 @@ const LayoutTest = (props) => {
               <button className="bg-transparent rounded-3xl text-white font-bold w-[256px] h-[3rem] mb-[3%] border-[3px] hover:bg-[#F0F0F0]">
                 Descargar App
               </button>
-              <p className="text-white text-lg">
+              <p className="text-white text-lg px-[15%] sm:px-[0]">
                 © 2025 SimpleApp. Todos los derechos reservados.
               </p>
             </div>
 
             {/* Footer Links */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+            <div className="flex flex-col sm:grid sm:grid-cols-4 gap-8 text-center sm:text-left">
               {/* Términos y privacidad */}
               <div>
-                <h4 className="font-semibold mb-2 font-poppins text-[white] ">
+                <h4 className="font-semibold mb-2 font-poppins text-[white]">
                   Términos y privacidad
                 </h4>
                 <ul>
