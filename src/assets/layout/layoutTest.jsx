@@ -29,6 +29,9 @@ import fichasMovil from "../img/fichasMovil.webp";
 import finalMovil from "../img/finalMovil.webp";
 import downloadB from "../img/downloadB.webp";
 import movilgroup from "../img/movilgroup.webp";
+import terminos from "../Documentos/terminos.pdf";
+import privacidad from "../Documentos/privacidad.pdf";
+
 
 const LayoutTest = (props) => {
   const { children } = props;
@@ -50,7 +53,7 @@ const LayoutTest = (props) => {
 
   return (
     <>
-      <div>
+      <div  className="max-w-[1888px] mx-auto my-auto">
         <div
           className="sm:h-[1200px] bg-no-repeat sm:bg-center h-[900px] bg-bottom"
           style={{ backgroundImage: `url(${fondo_1})` }}
@@ -361,7 +364,9 @@ const LayoutTest = (props) => {
             <h1 className="text-4xl sm:text-7xl font-poppins font-bold text-center text-[#4DA4FF] mb-[5%]">
               Preguntas frecuentes
             </h1>
-            <FaqAccordion></FaqAccordion>
+            <div id="Faq">
+              <FaqAccordion></FaqAccordion>
+            </div>
           </div>
         </div>
 
@@ -428,7 +433,7 @@ const LayoutTest = (props) => {
                 <ul>
                   <li>
                     <a
-                      href="#"
+                      href={terminos}
                       className="hover:underline font-poppins text-[white] font-light"
                     >
                       Términos de uso
@@ -436,7 +441,7 @@ const LayoutTest = (props) => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href={privacidad}
                       className="hover:underline font-poppins text-[white] font-light"
                     >
                       Política de privacidad
@@ -461,7 +466,7 @@ const LayoutTest = (props) => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="#Faq"
                       className="hover:underline font-poppins text-[white] font-light"
                     >
                       Preguntas frecuentes
@@ -508,7 +513,7 @@ const LayoutTest = (props) => {
                 <ul>
                   <li>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/simple_app_/"
                       className="hover:underline font-poppins text-[white] font-light"
                     >
                       Instagram
@@ -516,7 +521,7 @@ const LayoutTest = (props) => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://www.tiktok.com/@app_simple"
                       className="hover:underline font-poppins text-[white] font-light"
                     >
                       TikTok
@@ -524,7 +529,7 @@ const LayoutTest = (props) => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://www.facebook.com/lappsimple"
                       className="hover:underline font-poppins text-[white] font-light"
                     >
                       Facebook
@@ -532,7 +537,7 @@ const LayoutTest = (props) => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="https://www.youtube.com/@app_simple"
                       className="hover:underline font-poppins text-[white] font-light"
                     >
                       YouTube
