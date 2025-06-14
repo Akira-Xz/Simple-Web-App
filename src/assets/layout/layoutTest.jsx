@@ -22,11 +22,14 @@ import fondofinal from "../img/fondofinal.webp";
 import insta1 from "../img/insta1.webp";
 import face1 from "../img/face1.webp";
 import twitter1 from "../img/twitter1.webp";
+import tiktok from "../img/tiktok.webp";
+import youtube from "../img/youtube.webp";
 import deviceshadowx4 from "../img/deviceshadowx4.webp";
 import finanzasatr from "../img/finanzasatr.webp";
 import aprendeAA from "../img/aprendeAA.webp";
 import fichasMovil from "../img/fichasMovil.webp";
 import finalMovil from "../img/finalMovil.webp";
+import logo2 from "../img/logo2.webp";
 import downloadB from "../img/downloadB.webp";
 import movilgroup from "../img/movilgroup.webp";
 import terminos from "../Documentos/terminos.pdf";
@@ -34,6 +37,9 @@ import privacidad from "../Documentos/privacidad.pdf";
 
 const LayoutTest = (props) => {
   const { children } = props;
+  const [openIndex, setOpenIndex] = useState(null);
+  
+
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -58,7 +64,7 @@ const LayoutTest = (props) => {
           style={{ backgroundImage: `url(${fondo_1})` }}
         >
           <div className="justify-between flex p-12">
-            <img src={logo1} alt="" className="sm:w-32 w-24" />
+            <img src={logo2} alt="" className="sm:w-32 w-24" />
             <button className="bg-[white] rounded-3xl text-[#1685FE] font-semibold sm:w-[256px] w-[75px]">
               <img
                 src={downloadB}
@@ -283,7 +289,7 @@ const LayoutTest = (props) => {
         </div>
 
         <div
-          className="h-[2490px] bg-no-repeat bg-center sm:bg-cover p-12 sm:h-[3173px]"
+          className="h-[2800px] bg-no-repeat bg-center sm:bg-cover p-12 sm:h-[3173px]"
           style={{
             backgroundImage: `url(${windowWidth > 640 ? fichas : fichasMovil})`,
             backgroundSize: windowWidth > 640 ? "100% auto" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
@@ -363,8 +369,13 @@ const LayoutTest = (props) => {
             <h1 className="text-4xl sm:text-7xl font-poppins font-bold text-center text-[#4DA4FF] mb-[5%]">
               Preguntas frecuentes
             </h1>
-            <div id="Faq">
-              <FaqAccordion></FaqAccordion>
+            <div
+              id="Faq"
+              className={`faq-container ${
+                openIndex !== null ? "expanded" : ""
+              }`}
+            >
+              <FaqAccordion />
             </div>
           </div>
         </div>
@@ -401,40 +412,47 @@ const LayoutTest = (props) => {
 
           <div className="flex flex-col sm:flex-row sm:grid sm:grid-cols-2 gap-10 justify-around w-full">
             {/* Simple Logo Section */}
-            <div className="flex flex-col items-center text-center sm:items-start sm:text-left px-[20%]">
-              <img src={logo1} alt="Simple Logo" className="mb-4" />
-              <p className="text-white font-poppins mb-4">Conoce más</p>
-              <div className="flex gap-3 my-4 justify-center sm:justify-start">
-                <a href="#" className="text-[black]">
-                  <img src={insta1} alt="" />
-                </a>
-                <a href="#" className="text-[black]">
-                  <img src={face1} alt="" />
-                </a>
-                <a href="#" className="text-[black]">
-                  <img src={twitter1} alt="" />
-                </a>
-              </div>
-              <button className="bg-transparent rounded-3xl text-white font-bold w-[256px] h-[3rem] mb-[3%] border-[3px] hover:bg-[#F0F0F0]">
-                Descargar App
-              </button>
-              <p className="text-white text-lg px-[15%] sm:px-[0]">
-                © 2025 SimpleApp. Todos los derechos reservados.
-              </p>
-            </div>
+            <div className="flex flex-col items-start text-left sm:items-start sm:text-left px-[20%]">
+  <img src={logo1} alt="Simple Logo" className="mb-4" />
+  <p className="text-[black] font-poppins mb-4">Conoce más</p>
+  <div className="flex gap-3 my-4 justify-start">
+    <a href="#" className="text-[black]">
+      <img src={tiktok} alt="" />
+    </a>
+    <a href="#" className="text-[black]">
+      <img src={insta1} alt="" />
+    </a>
+    <a href="#" className="text-[black]">
+      <img src={face1} alt="" />
+    </a>
+    <a href="#" className="text-[black]">
+      <img src={youtube} alt="" />
+    </a>
+    <a href="#" className="text-[black]">
+      <img src={twitter1} alt="" />
+    </a>
+  </div>
+  <button className="bg-transparent rounded-3xl text-[black] font-bold w-[256px] h-[3rem] mb-[3%] border-[3px] border-[black] hover:bg-[#4C4C4C] hover:bg-opacity-50">
+    Descargar App
+  </button>
+  <p className="text-[black] text-lg px-[15%] sm:px-[0]">
+    © 2025 SimpleApp. Todos los derechos reservados.
+  </p>
+</div>
+
 
             {/* Footer Links */}
             <div className="flex flex-col sm:grid sm:grid-cols-4 gap-8 text-center sm:text-left">
               {/* Términos y privacidad */}
               <div>
-                <h4 className="font-semibold mb-2 font-poppins text-[white]">
+                <h4 className="font-semibold mb-2 font-poppins text-[black]">
                   Términos y privacidad
                 </h4>
                 <ul>
                   <li>
                     <a
                       href={terminos}
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Términos de uso
                     </a>
@@ -442,7 +460,7 @@ const LayoutTest = (props) => {
                   <li>
                     <a
                       href={privacidad}
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Política de privacidad
                     </a>
@@ -452,14 +470,14 @@ const LayoutTest = (props) => {
 
               {/* Ayuda y soporte */}
               <div>
-                <h3 className="font-semibold mb-2 font-poppins text-[white]">
+                <h3 className="font-semibold mb-2 font-poppins text-[black]">
                   Ayuda y soporte
                 </h3>
                 <ul>
                   <li>
                     <a
                       href="#"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Centro de ayuda
                     </a>
@@ -467,7 +485,7 @@ const LayoutTest = (props) => {
                   <li>
                     <a
                       href="#Faq"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Preguntas frecuentes
                     </a>
@@ -475,21 +493,21 @@ const LayoutTest = (props) => {
                   <li>
                     <a
                       href="#"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Soporte técnico
                     </a>
                   </li>
                 </ul>
 
-                <h3 className="font-semibold mb-2 font-poppins text-[white] mt-[10%]">
+                <h3 className="font-semibold mb-2 font-poppins text-[black] mt-[10%]">
                   Aplicaciones
                 </h3>
                 <ul>
                   <li>
                     <a
                       href="#"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Disponible para Android
                     </a>
@@ -497,7 +515,7 @@ const LayoutTest = (props) => {
                   <li>
                     <a
                       href="#"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Disponible para iOS
                     </a>
@@ -507,14 +525,14 @@ const LayoutTest = (props) => {
 
               {/* Social */}
               <div>
-                <h4 className="font-semibold mb-2 font-poppins text-[white]">
+                <h4 className="font-semibold mb-2 font-poppins text-[black]">
                   Social
                 </h4>
                 <ul>
                   <li>
                     <a
                       href="https://www.instagram.com/simple_app_/"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Instagram
                     </a>
@@ -522,7 +540,7 @@ const LayoutTest = (props) => {
                   <li>
                     <a
                       href="https://www.tiktok.com/@app_simple"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       TikTok
                     </a>
@@ -530,7 +548,7 @@ const LayoutTest = (props) => {
                   <li>
                     <a
                       href="https://www.facebook.com/lappsimple"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       Facebook
                     </a>
@@ -538,7 +556,7 @@ const LayoutTest = (props) => {
                   <li>
                     <a
                       href="https://www.youtube.com/@app_simple"
-                      className="hover:underline font-poppins text-[white] font-light"
+                      className="hover:underline font-poppins text-[black] font-light"
                     >
                       YouTube
                     </a>
