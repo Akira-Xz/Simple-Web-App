@@ -363,7 +363,7 @@ const LayoutTest = (props) => {
           </div>
 
           {/* Sección de Preguntas Frecuentes */}
-          <div className="mt-[30%] md:mt-[25%] px-4 sm:px-8 md:px-[175px]">
+          <div className="mt-[30%] md:mt-[20%] px-4 sm:px-8 md:px-[175px]">
             <h1 className="text-4xl sm:text-7xl font-poppins font-bold text-center text-[#4DA4FF] mb-[5%]">
               Preguntas frecuentes
             </h1>
