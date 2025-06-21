@@ -38,8 +38,6 @@ import privacidad from "../Documentos/privacidad.pdf";
 const LayoutTest = (props) => {
   const { children } = props;
   const [openIndex, setOpenIndex] = useState(null);
-  
-
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -76,7 +74,7 @@ const LayoutTest = (props) => {
           </div>
           <img src={movilgroup} alt="" className="block sm:hidden mx-auto" />
 
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 items-center justify-items-center px-8 py-12 relative">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 items-center justify-items-center px-8 py-[48px] relative">
             {/* Columna 1: Texto AHORRAR y ES */}
             <div className="col-span-1 text-white font-bold text-center relative">
               {/* Texto AHORRAR: Posicionado un poco arriba de la imagen */}
@@ -223,7 +221,7 @@ const LayoutTest = (props) => {
               </div>
             </button>
 
-            <button className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white border border-gray-300 shadow-md w-auto">
+            <button className="flex items-center gap-3 px-4 py-[12px] rounded-2xl bg-white border border-gray-300 shadow-md w-auto">
               <img
                 src={playstore}
                 alt="Playstore logo"
@@ -292,7 +290,7 @@ const LayoutTest = (props) => {
           className="h-[2600px] bg-no-repeat bg-center sm:bg-cover p-12 sm:h-[2800px]"
           style={{
             backgroundImage: `url(${windowWidth > 640 ? fichas : fichasMovil})`,
-            backgroundSize: windowWidth > 640 ? "100% auto" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
+            backgroundSize: windowWidth > 640 ? "100% 90%" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
           }}
         >
           <div className="font-poppins text-center sm:text-left">
@@ -322,7 +320,7 @@ const LayoutTest = (props) => {
 
             {/* Segundo bloque */}
             <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px] flex flex-col h-full">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] mt-[45px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] mt-[60px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
                 Sistema de logros
               </h2>
               <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[15%] px-[1%] pt-[20px]">
@@ -345,7 +343,7 @@ const LayoutTest = (props) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-[175px] sm:pt-[75px]">
             {/* Primer bloque */}
             <div className="font-poppins text-center pl-4 sm:pl-[40px] md:pl-[250px] flex flex-col h-full">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[30%] mt-[-80px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[30%] mt-[-15px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
                 Comparte y compite
               </h2>
               <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[25%] px-[10%] pt-[20px]">
@@ -383,11 +381,11 @@ const LayoutTest = (props) => {
         <img
           src={fichasHorizontales}
           alt=""
-          className="w-[90%] mx-auto hidden md:block "
+          className="w-[70%] mx-auto hidden md:block "
         />
 
         <div
-          className="md:h-[1100px] bg-no-repeat bg-center bg-contain mt-[2%] flex flex-col items-center h-[2547px]"
+          className="md:h-[1100px] bg-no-repeat bg-center bg-contain mt-[2%] flex flex-col items-center h-[2330px]"
           style={{
             backgroundImage: `url(${
               windowWidth > 640 ? fondofinal : finalMovil
@@ -413,33 +411,32 @@ const LayoutTest = (props) => {
           <div className="flex flex-col sm:flex-row sm:grid sm:grid-cols-2 gap-10 justify-around w-full">
             {/* Simple Logo Section */}
             <div className="flex flex-col items-start text-left sm:items-start sm:text-left px-[20%]">
-  <img src={logo1} alt="Simple Logo" className="mb-4" />
-  <p className="text-[black] font-poppins mb-4">Conoce más</p>
-  <div className="flex gap-3 my-4 justify-start">
-    <a href="#" className="text-[black]">
-      <img src={tiktok} alt="" />
-    </a>
-    <a href="#" className="text-[black]">
-      <img src={insta1} alt="" />
-    </a>
-    <a href="#" className="text-[black]">
-      <img src={face1} alt="" />
-    </a>
-    <a href="#" className="text-[black]">
-      <img src={youtube} alt="" />
-    </a>
-    <a href="#" className="text-[black]">
-      <img src={twitter1} alt="" />
-    </a>
-  </div>
-  <button className="bg-transparent rounded-3xl text-[black] font-bold w-[256px] h-[3rem] mb-[3%] border-[3px] border-[black] hover:bg-[#4C4C4C] hover:bg-opacity-50">
-    Descargar App
-  </button>
-  <p className="text-[black] text-lg px-[15%] sm:px-[0]">
-    © 2025 SimpleApp. Todos los derechos reservados.
-  </p>
-</div>
-
+              <img src={logo1} alt="Simple Logo" className="mb-4" />
+              <p className="text-[black] font-poppins mb-4">Conoce más</p>
+              <div className="flex gap-3 my-4 justify-start">
+                <a href="#" className="text-[black]">
+                  <img src={tiktok} alt="" />
+                </a>
+                <a href="#" className="text-[black]">
+                  <img src={insta1} alt="" />
+                </a>
+                <a href="#" className="text-[black]">
+                  <img src={face1} alt="" />
+                </a>
+                <a href="#" className="text-[black]">
+                  <img src={youtube} alt="" />
+                </a>
+                <a href="#" className="text-[black]">
+                  <img src={twitter1} alt="" />
+                </a>
+              </div>
+              <button className="bg-transparent rounded-3xl text-[black] font-bold w-[256px] h-[3rem] mb-[3%] border-[3px] border-[black] hover:bg-[#4C4C4C] hover:bg-opacity-50">
+                Descargar App
+              </button>
+              <p className="text-[black] text-lg px-[15%] sm:px-[0]">
+                © 2025 SimpleApp. Todos los derechos reservados.
+              </p>
+            </div>
 
             {/* Footer Links */}
             <div className="flex flex-col sm:grid sm:grid-cols-4 gap-8 text-center sm:text-left">
