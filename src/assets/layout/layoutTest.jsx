@@ -60,10 +60,10 @@ const LayoutTest = (props) => {
     <>
       <div className="max-w-[1888px] mx-auto my-auto">
         <div
-          className="sm:h-[1200px] bg-no-repeat sm:bg-center h-[900px] bg-bottom"
+          className="sm:h-[1300px] bg-no-repeat sm:bg-top h-[900px] bg-bottom py-0"
           style={{ backgroundImage: `url(${fondo_1})` }}
         >
-          <div className="justify-between flex p-12">
+          <div className="justify-between flex p-12 sm:pb-[200px]">
             <img src={logo2} alt="" className="sm:w-32 w-24" />
             <button className="bg-[white] rounded-3xl text-[#1685FE] font-semibold sm:w-[256px] w-[75px]">
               <img
@@ -80,12 +80,12 @@ const LayoutTest = (props) => {
             {/* Columna 1: Texto AHORRAR y ES */}
             <div className="col-span-1 text-white font-bold text-center relative">
               {/* Texto AHORRAR: Posicionado un poco arriba de la imagen */}
-              <div className="text-6xl sm:text-8xl md:text-9xl leading-none absolute top-[-430px] left-[150px] transform">
+              <div className="text-6xl sm:text-8xl md:text-9xl leading-none absolute top-[-430px] left-[150px] ">
                 AHORRAR
               </div>
 
               {/* Texto ES: Posicionado a la izquierda del teléfono */}
-              <div className="text-6xl sm:text-8xl md:text-9xl leading-none absolute right-[50%] left-[200px] transform -translate-y-[200%]">
+              <div className="text-6xl sm:text-8xl md:text-9xl leading-none absolute right-[50%] left-[250px] transform -translate-y-[200%] top-[-50px]">
                 ES
               </div>
             </div>
@@ -100,8 +100,8 @@ const LayoutTest = (props) => {
             </div>
 
             {/* Columna 3: Texto SIMPLE + QR */}
-            <div className="col-span-1 text-white text-center left-[30%] transform -translate-x-[45%]">
-              <img src={perfil} alt="" className="w-16 sm:w-32 mx-auto" />
+            <div className="col-span-1 text-white justify-items-left text-center left-[20%] transform -translate-x-[55%]">
+              <img src={perfil} alt="" className="w-16 sm:w-32 mx-0" />
               <div className="text-6xl sm:text-8xl md:text-9xl font-bold mb-4">
                 SIMPLE
               </div>
@@ -198,19 +198,19 @@ const LayoutTest = (props) => {
         </div>
 
         <div
-          className="h-[1080px] bg-no-repeat bg-center bg-cover"
+          className="h-[976px] bg-no-repeat bg-bottom bg-cover"
           style={{
             backgroundImage: `url(${
               windowWidth > 640 ? frame_393_1 : finanzasatr
             })`, // Cambiar la imagen dependiendo del tamaño de la ventana
           }}
         >
-          <div className="flex justify-center items-center p-8 sm:p-12 md:p-20 text-white font-poppins font-bold text-4xl sm:text-[32px] md:text-7xl">
-            <p className="text-center">
+          <div className="flex justify-center items-center p-8 sm:p-12  text-white font-poppins font-bold text-4xl sm:text-[32px] md:text-7xl ">
+            <p className="text-center leading-normal">
               Finanzas a tu <br /> ritmo, sin horarios ni <br /> fronteras
             </p>
           </div>
-          <div className="flex flex-col items-center gap-3 mt-2 sm:mt-4 md:mt-10 md:flex-row md:justify-center md:gap-4">
+          <div className="flex flex-col items-center gap-3 mt-2 sm:mt-2  md:flex-row md:justify-center md:gap-4">
             <button className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white border border-gray-300 shadow-md w-auto">
               <img src={apple} alt="Apple logo" className="w-6 sm:w-8 h-auto" />
               <div className="text-left leading-tight">
@@ -248,7 +248,7 @@ const LayoutTest = (props) => {
             backgroundSize: "calc(100% + 5px) 100%",
           }}
         >
-          <div className="text-white font-poppins flex flex-col items-center md:items-start sm:px-[0%] px-[10%]">
+          <div className="text-white font-poppins flex flex-col items-center md:items-start  px-[10%]">
             <h1 className="font-bold text-[40px] sm:text-[80px] leading-[1.1] tracking-wide mb-8 text-left md:text-left">
               Aprende a ahorrar <br />
               sin aburrirte
@@ -289,14 +289,14 @@ const LayoutTest = (props) => {
         </div>
 
         <div
-          className="h-[2800px] bg-no-repeat bg-center sm:bg-cover p-12 sm:h-[3173px]"
+          className="h-[2600px] bg-no-repeat bg-center sm:bg-cover p-12 sm:h-[2800px]"
           style={{
             backgroundImage: `url(${windowWidth > 640 ? fichas : fichasMovil})`,
             backgroundSize: windowWidth > 640 ? "100% auto" : "100% 100%", // En móviles se ajusta a todo el ancho y alto de la pantalla
           }}
         >
           <div className="font-poppins text-center sm:text-left">
-            <h1 className="text-[#4DA4FF] font-bold text-[44px] text-center sm:text-[80px] md:px-[18%] px-[1%] mt-[-45px] pb-[3%]">
+            <h1 className="text-[#4DA4FF] font-bold text-[44px] text-center sm:text-[80px] md:px-[18%] px-[1%] mt-[45px] pb-[3%]">
               ¡El primer juego que te ayuda a tener más dinero!
             </h1>
             <p className="text-[black] font-medium text-[18px] text-center px-8 sm:text-[24px] md:px-[19%] px-[4%]">
@@ -308,7 +308,7 @@ const LayoutTest = (props) => {
           </div>
 
           {/* Grid de contenido */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-[175px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-[115px]">
             {/* Primer bloque */}
             <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px] flex flex-col h-full">
               <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] mt-[-75px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
@@ -332,7 +332,7 @@ const LayoutTest = (props) => {
 
             {/* Tercer bloque */}
             <div className="font-poppins text-center px-4 sm:px-8 md:px-[80px] flex flex-col h-full">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] mt-[100px] md:mt-[30px] sm:whitespace-normal whitespace-nowrap">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[20%] mt-[80px] md:mt-[30px] sm:whitespace-normal whitespace-nowrap">
                 Cursos interactivos
               </h2>
               <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[10%] px-[5%] pt-[20px]">
@@ -342,7 +342,7 @@ const LayoutTest = (props) => {
           </div>
 
           {/* Segundo grupo de bloques con 2 columnas */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-[175px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-[175px] sm:pt-[75px]">
             {/* Primer bloque */}
             <div className="font-poppins text-center pl-4 sm:pl-[40px] md:pl-[250px] flex flex-col h-full">
               <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[30%] mt-[-80px] md:mt-[40px] sm:whitespace-normal whitespace-nowrap">
@@ -355,7 +355,7 @@ const LayoutTest = (props) => {
 
             {/* Segundo bloque */}
             <div className="font-poppins text-center pr-4 sm:pr-[40px] md:pr-[250px] flex flex-col h-full">
-              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[25%] mt-[100px] md:mt-[30px] sm:whitespace-normal whitespace-nowrap ml-[-20px]">
+              <h2 className="font-bold text-[28px] sm:text-[44px] text-[#4DA4FF] md:px-[25%] mt-[80px] md:mt-[30px] sm:whitespace-normal whitespace-nowrap ml-[-20px]">
                 Seguimiento de progreso
               </h2>
               <p className="font-medium text-[16px] sm:text-[24px] text-[black] md:px-[25%] px-[10%] pt-[20px]">
@@ -365,7 +365,7 @@ const LayoutTest = (props) => {
           </div>
 
           {/* Sección de Preguntas Frecuentes */}
-          <div className="mt-[40%] px-4 sm:px-8 md:px-[175px]">
+          <div className="mt-[40%]  sm:px-8 md:px-[175px]">
             <h1 className="text-4xl sm:text-7xl font-poppins font-bold text-center text-[#4DA4FF] mb-[5%]">
               Preguntas frecuentes
             </h1>
@@ -400,13 +400,13 @@ const LayoutTest = (props) => {
             Ya diste el primer paso, ahora ve por más
           </h1>
 
-          <p className="text-white font-regular leading-relaxed text-xl pb-[5%] px-[15%] text-center font-poppins sm:px-[35%]">
+          <p className="text-white font-regular leading-relaxed text-xl pb-[2%] px-[15%] text-center font-poppins sm:px-[35%]">
             Cursos para aprender a ahorrar e invertir, aprender a ahorrar es
             solo el comienzo. Descubre nuestros cursos en Udemy y domina tus
             finanzas con contenido práctico, útil y hecho para ti.
           </p>
 
-          <button className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px] mb-[800px] h-[3rem] md:mb-[15%]">
+          <button className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px] mb-[800px] h-[3.5rem] md:mb-[15%]">
             Saber más
           </button>
 
