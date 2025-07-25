@@ -34,12 +34,15 @@ import downloadB from "../img/downloadB.webp";
 import movilgroup from "../img/movilgroup.webp";
 import terminos from "../Documentos/terminos.pdf";
 import privacidad from "../Documentos/privacidad.pdf";
+import Navbar from "../components/Navbar";
+import Principal from "../components/Principal";
 
 const LayoutTest = (props) => {
   const { children } = props;
   const [openIndex, setOpenIndex] = useState(null);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [maxHeight, setMaxHeight] = useState(1080);
 
   useEffect(() => {
     // Función para actualizar el estado con el ancho de la ventana
@@ -54,80 +57,31 @@ const LayoutTest = (props) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const updateHeight = () => {
+      setMaxHeight(window.innerHeight);
+    };
+
+    updateHeight(); // Establecer al montar
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
   return (
     <>
-      <div className="max-w-[1888px] mx-auto my-auto">
+      <div className="mx-auto max-w-[1990px]">
         <div
-          className="sm:h-[1300px] bg-no-repeat sm:bg-top h-[900px] bg-bottom py-0"
-          style={{ backgroundImage: `url(${fondo_1})` }}
+          className="bg-cover bg-no-repeat bg-center"
+          style={{
+            height: `${maxHeight }px`,
+            backgroundImage: `url(${fondo_1})`,
+      
+          }}
         >
-          <div className="justify-between flex p-12 sm:pb-[200px]">
-            <img src={logo2} alt="" className="sm:w-32 w-24" />
-            <button className="bg-[white] rounded-3xl text-[#1685FE] font-semibold sm:w-[256px] w-[75px]">
-              <img
-                src={downloadB}
-                alt="Descargar"
-                className="w-8 h-auto justify-self-center sm:hidden"
-              />
-              <span className="hidden sm:inline-block">Descargar</span>
-            </button>
-          </div>
-          <img src={movilgroup} alt="" className="block sm:hidden mx-auto" />
-
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-3 items-center justify-items-center px-8 py-[48px] relative">
-            {/* Columna 1: Texto AHORRAR y ES */}
-            <div className="col-span-1 text-white font-bold text-center relative">
-              {/* Texto AHORRAR: Posicionado un poco arriba de la imagen */}
-              <div className="text-6xl sm:text-8xl md:text-9xl leading-none absolute top-[-430px] left-[150px] ">
-                AHORRAR
-              </div>
-
-              {/* Texto ES: Posicionado a la izquierda del teléfono */}
-              <div className="text-6xl sm:text-8xl md:text-9xl leading-none absolute right-[50%] left-[250px] transform -translate-y-[200%] top-[-50px]">
-                ES
-              </div>
-            </div>
-
-            {/* Columna 2: Teléfono */}
-            <div className="col-span-1 z-20">
-              <img
-                src={devicenoshadow} // Imagen del teléfono
-                alt="Phone App"
-                className="w-64 sm:w-80 max-w-full"
-              />
-            </div>
-
-            {/* Columna 3: Texto SIMPLE + QR */}
-            <div className="col-span-1 text-white justify-items-left text-center left-[20%] transform -translate-x-[55%]">
-              <img src={perfil} alt="" className="w-16 sm:w-32 mx-0" />
-              <div className="text-6xl sm:text-8xl md:text-9xl font-bold mb-4">
-                SIMPLE
-              </div>
-              <div className="flex items-center justify-left space-x-4">
-                {/* Contenedor para QR y texto */}
-                <div className="flex items-center space-x-4">
-                  {/* Imagen del QR */}
-                  <img
-                    src={qrcode} // Imagen del QR
-                    alt="QR Code"
-                    className="w-24 sm:w-40 h-24 sm:h-40 bg-white p-1"
-                  />
-
-                  {/* Texto junto al QR */}
-                  <p className="text-sm sm:text-lg text-left">
-                    Un QR.
-                    <br />
-                    Una app.
-                    <br />
-                    Un nuevo hábito.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Navbar />
+          <Principal />
         </div>
 
-        <div className="text-center text-2xl italic font-serif px-4 sm:px-8 md:px-12 ">
+        <div className="text-center text-2xl italic font-serif px-4 sm:px-8 md:px-12 bg-red-500 mt-[100px]">
           <p>
             <span className="bg-blue-100 text-blue-900 p-1 inline-block rounded-lg">
               “Ahorrar no es solo guardar dinero. Es construir la vida que
