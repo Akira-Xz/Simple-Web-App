@@ -22,6 +22,8 @@
     "dayjs": "^1.11.12",
     "i18next": "^23.11.3",
     "i18next-browser-languagedetector": "^7.2.1",
+    "locomotive-scroll": "^4.0.6",
+    "lottie-web": "^5.13.0",
     "mapbox-gl": "^3.4.0",
     "material-react-table": "^2.13.0",
     "postcss": "^8.5.4",

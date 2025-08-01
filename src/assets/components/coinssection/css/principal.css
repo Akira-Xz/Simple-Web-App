@@ -1,0 +1,20 @@
+@keyframes fallLoopFade {
+  0% {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+.coin-fall {
+  animation: fallLoopFade 12s linear infinite;
+}
