@@ -88,9 +88,13 @@ const Footer = () => {
           con contenido práctico, útil y hecho para ti.
         </p>
 
-        <button className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px]  h-[3.5rem] ">
+        <a
+          href="https://www.udemy.com/user/jorge-rolon-10/?srsltid=AfmBOoqtY9QG4kIbGjWWu4SjlxtD83s4v9vD7RftPo0YQZS2nTWoxa8a"
+          target="_blank"
+          className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px]  h-[3.5rem] flex justify-center items-center"
+        >
           Saber más
-        </button>
+        </a>
       </div>
 
       <div className="flex flex-col sm:flex-row sm:grid sm:grid-cols-2 gap-10 justify-around w-full">
@@ -98,19 +102,35 @@ const Footer = () => {
           <img src={logo1} alt="Simple Logo" className="mb-4" />
           <p className="text-[black] font-poppins mb-4">Conoce más</p>
           <div className="flex gap-3 my-4 justify-start">
-            <a href="https://www.tiktok.com/@app_simple" target="_blank" className="text-[black]">
+            <a
+              href="https://www.tiktok.com/@app_simple"
+              target="_blank"
+              className="text-[black]"
+            >
               <img src={tiktok} alt="" />
             </a>
-            <a href="https://www.instagram.com/simple_app_/" target="_blank" className="text-[black]">
+            <a
+              href="https://www.instagram.com/simple_app_/"
+              target="_blank"
+              className="text-[black]"
+            >
               <img src={insta1} alt="" />
             </a>
-            <a href="https://www.facebook.com/lappsimple" target="_blank" className="text-[black]">
+            <a
+              href="https://www.facebook.com/lappsimple"
+              target="_blank"
+              className="text-[black]"
+            >
               <img src={face1} alt="" />
             </a>
-            <a href="https://www.youtube.com/@app_simple" target="_blank" className="text-[black]">
+            <a
+              href="https://www.youtube.com/@app_simple"
+              target="_blank"
+              className="text-[black]"
+            >
               <img src={youtube} alt="" />
             </a>
-            <a href="#" className="text-[black]">
+            <a href="https://x.com/Simple_App_" target="_blank" className="text-[black]">
               <img src={twitter1} alt="" />
             </a>
           </div>

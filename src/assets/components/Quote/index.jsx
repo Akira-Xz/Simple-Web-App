@@ -29,7 +29,7 @@ const Quote = () => {
           </div>
           <div className="h-screen flex items-center">
             <h5>
-              Es <span className="italic font-bold">tomar el control</span>,
+              Es <span className="italic font-bold">tomar el control,</span>
               reducir el estrés y darle{" "}
               <span className="italic font-bold">propósito</span> a cada peso.
             </h5>

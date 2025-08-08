@@ -1,5 +1,5 @@
 import devicenoshadow from "../../img/devicenoshadow.webp";
-import qrcode from "../../img/qrcode.webp";
+import nuevoqr from "../../img/nuevoqr.png";
 import perfil from "../../img/perfil.webp";
 import "./css/principal.css";
 
@@ -25,7 +25,7 @@ const Principal = () => {
 
         <div className="md:hidden flex flex-col leading-none absolute top-[530px] left-[-125px]  md:top-[-50px] md:left-[250px] transform -translate-y-[200%]">
           <img
-            src={qrcode}
+            src={nuevoqr}
             alt="QR Code"
             className="w-[59px] ml-[110px] bg-white p-1"
           />
@@ -49,7 +49,12 @@ const Principal = () => {
       </div>
 
       {/* Columna 3: Texto SLIDE + QR */}
-      <div className="w-[500px] md:w-[130%] text-white justify-items-left text-center mr-[20%] mt-[-30px] md:mt-0">
+      <div
+        className="
+          w-[500px] md:w-[130%] text-white justify-items-left text-center mr-[25%] mt-[-30px] md:mt-0 overflow-hidden
+          2xl:max-[1760px]:pl-3
+        "
+      >
         <img
           src={perfil}
           alt=""
@@ -57,15 +62,21 @@ const Principal = () => {
         />
 
         {/* Sliding text */}
-        <div className="h-[105px] overflow-hidden mb-4 ml-[-10px] md:ml-0 md:pl-[40px] ">
-          <div className="flex flex-col animate-slide">
-            <div className="h-[100px] flex items-center justify-start text-6xl  md:text-[95px]  2xl:text-[110px]  2xl:text font-bold text-left">
+        <div
+          className="
+        h-[105px] overflow-hidden mb-4 ml-[-5px] 2xl:pl-[20px]
+        2xl:max-[1760px]:overflow-y-hidden
+        2xl:max-[1760px]:overflow-x-hidden
+      "
+        >
+          <div className="flex flex-col animate-slide 2xl:max-[1760px]:whitespace-nowrap">
+            <div className="h-[100px] flex items-center justify-start text-6xl md:text-[95px] 2xl:text-[110px] font-bold text-left 2xl:max-[1760px]:text-[100px]">
               DIVERTIDO
             </div>
-            <div className="h-[100px] flex items-center justify-start text-6xl md:text-[90px] 2xl:text-[110px]  font-bold  text-left">
+            <div className="h-[100px] flex items-center justify-start text-6xl md:text-[90px] 2xl:text-[110px] font-bold text-left 2xl:max-[1760px]:text-[100px]">
               INTELIGENTE
             </div>
-            <div className="h-[100px] flex items-center justify-start text-6xl  md:text-[95px]  2xl:text-[110px]  font-bold  text-left">
+            <div className="h-[100px] flex items-center justify-start text-6xl md:text-[95px] 2xl:text-[110px] font-bold text-left 2xl:max-[1760px]:text-[100px]">
               SIMPLE
             </div>
           </div>
@@ -75,7 +86,7 @@ const Principal = () => {
         <div className="hidden md:flex items-center justify-left space-x-4">
           <div className="flex items-center space-x-4">
             <img
-              src={qrcode}
+              src={nuevoqr}
               alt="QR Code"
               className="w-24 sm:w-40 h-24 sm:h-40 bg-white p-1"
             />

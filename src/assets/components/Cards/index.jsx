@@ -14,7 +14,7 @@ const Cards = () => {
 
         <header>
           <h3 className="mt-2 text-2xl font-semibold font-poppins">
-            A tu ritmo.
+            A tu ritmo
           </h3>
         </header>
         <p className="mt-1 text-gray-600 text-lg font-regular font-poppins px-[16%]">
