@@ -1,15 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 // import { I18nextProvider } from 'react-i18next';
 // import i18n from 'i18next';
 // import LanguageDetector from 'i18next-browser-languagedetector';
 // import enTranslation from './assets/locale/en.json';
 // import esTranslation from './assets/locale/es.json';
-import { Provider } from 'react-redux'
-import { store } from './assets/global/redux/store/store'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './index.css'
-import LayoutTest from './assets/layout/layoutTest';
+import { Provider } from "react-redux";
+import { store } from "./assets/global/redux/store/store";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./index.css";
+import LayoutTest from "./assets/layout/layoutTest";
+import DeckDownload from "./assets/deck/deckDownload";
 // import Navbar from './assets/components/Navbar'
 // import Footer from './assets/components/Footer'
 // import Dashboard from './assets/components/Dashboard'
@@ -44,13 +45,16 @@ import LayoutTest from './assets/layout/layoutTest';
 //     },
 //   });
 
-document.querySelector('#Main') && ReactDOM.createRoot(document.querySelector('#Main')).render(
-  <React.StrictMode>
-    {/* <I18nextProvider i18n={i18n}> */}
+document.querySelector("#Main") &&
+  ReactDOM.createRoot(document.querySelector("#Main")).render(
+    <React.StrictMode>
+      {/* <I18nextProvider i18n={i18n}> */}
       <Provider store={store}>
         <Router>
           {/* <Navbar /> */}
           <Routes>
+            <Route path="/deck" element={<DeckDownload />} />
+
             <Route path="/*" element={<LayoutTest />} />
             {/* <Route path="/*" element={<div className='h-screen w-full flex flex-col gap-y-[20px] justify-center items-center'>
             <div className='body-1 text-center text-black'>Error</div>
@@ -61,6 +65,6 @@ document.querySelector('#Main') && ReactDOM.createRoot(document.querySelector('#
           {/* <Footer /> */}
         </Router>
       </Provider>
-    {/* </I18nextProvider> */}
-  </React.StrictMode>,
-)
+      {/* </I18nextProvider> */}
+    </React.StrictMode>
+  );
