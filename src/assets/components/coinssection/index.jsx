@@ -132,7 +132,7 @@ const CoinsSection = () => {
               >
                 <div className="relative min-w-[219px] h-[330px] rounded-xl shadow-md transition-all duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
                   {/* Cara frontal */}
-                  <div className="absolute inset-0 flex items-center rounded-2xl bg-gradient-to-b from-[#028A0F] to-[#9BE7A9] text-white font-bold text-[18px] [backface-visibility:hidden] flex-col justify-between">
+                  <div className="absolute inset-0 flex items-center rounded-2xl bg-gradient-to-b from-[#028A0F] to-[#9BE7A9] text-white font-bold text-[18px]  [transform:rotateY(180deg)]  [backface-visibility:hidden] flex-col justify-between">
                     <p className="text-center text-[18px] font-medium px-[16px] pt-[16px] drop-shadow-lg">
                       {card.title}
                     </p>
@@ -146,7 +146,7 @@ const CoinsSection = () => {
                   </div>
 
                   {/* Cara trasera */}
-                  <div className="absolute inset-0 flex flex-col py-[32px] px-[24px] items-start justify-between rounded-xl bg-[#062D66] text-white  [transform:rotateY(180deg)] [backface-visibility:hidden]">
+                  <div className="absolute inset-0 flex flex-col py-[32px] px-[24px] items-start justify-between rounded-xl bg-[#062D66] text-white [backface-visibility:hidden]">
                     <img
                       src={vectorluca}
                       alt=""
@@ -170,14 +170,14 @@ const CoinsSection = () => {
               <div key={index} className="group [perspective:1000px]">
                 <div className="relative w-[400px] h-[600px] 2xl:w-[436px] 2xl:h-[660px] rounded-2xl shadow-md transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Cara frontal */}
-                  <div className="absolute inset-0 flex items-center  rounded-2xl bg-gradient-to-b from-[#028A0F] to-[#9BE7A9] text-white font-bold text-[18px] [backface-visibility:hidden]   flex-col justify-between">
+                  <div className="absolute inset-0 flex items-center  rounded-2xl bg-gradient-to-b from-[#028A0F] to-[#9BE7A9] text-white font-bold text-[18px] [transform:rotateY(180deg)] [backface-visibility:hidden]   flex-col justify-between">
                     <p className="text-center text-[24px] font-medium px-[34px] pt-[32px] drop-shadow-lg">
                       {card.title}
                     </p>
                     <img src={card.img} className={card.widthClass} />
                   </div>
                   {/* Cara trasera */}
-                  <div className="absolute inset-0 py-[32px] px-[24px] flex flex-col items-start  rounded-2xl bg-[#062D66] text-white  [transform:rotateY(180deg)] [backface-visibility:hidden] justify-between">
+                  <div className="absolute inset-0 py-[32px] px-[24px] flex flex-col items-start  rounded-2xl bg-[#062D66] text-white  [backface-visibility:hidden] justify-between">
                     <img
                       src={vectorluca}
                       alt=""
@@ -198,7 +198,7 @@ const CoinsSection = () => {
               <div key={index} className="group [perspective:1000px]">
                 <div className="relative w-[400px] h-[600px] 2xl:w-[436px] 2xl:h-[660px] rounded-2xl shadow-md transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
                   {/* Cara frontal */}
-                  <div className="absolute inset-0 flex items-center rounded-2xl bg-gradient-to-b from-[#028A0F] to-[#9BE7A9] text-white font-bold text-[18px] [backface-visibility:hidden] flex-col justify-between">
+                  <div className="absolute inset-0 flex items-center rounded-2xl bg-gradient-to-b from-[#028A0F] to-[#9BE7A9] text-white font-bold text-[18px]  [transform:rotateY(180deg)] [backface-visibility:hidden] flex-col justify-between">
                     <p className="text-center text-[24px] font-medium px-[34px] pt-[32px] drop-shadow-lg">
                       {card.title}
                     </p>
@@ -206,7 +206,7 @@ const CoinsSection = () => {
                   </div>
 
                   {/* Cara trasera */}
-                  <div className="absolute inset-0 py-[32px] px-[24px] flex flex-col items-start  rounded-2xl bg-[#062D66] text-white  [transform:rotateY(180deg)] [backface-visibility:hidden] justify-between">
+                  <div className="absolute inset-0 py-[32px] px-[24px] flex flex-col items-start  rounded-2xl bg-[#062D66] text-white  [backface-visibility:hidden] justify-between">
                     <img
                       src={vectorluca}
                       alt=""

@@ -36,7 +36,7 @@ const FaqAccordion = () => {
     {
       question: "¿La empresa o la app administra mi dinero?",
       answer:
-        "No realmente. Simple, o la app, no están destinadas para administrar o tener tu dinero o patrimonio. Solo te ayudamos con la gestión del mismo, sin embargo te sugerimos guardar tu dinero en una institución que brinde te proporcione una tarjeta de débito, como un banco.",
+        "No realmente. Simple, o la app, no están destinadas para administrar o tener tu dinero o patrimonio. Solo te ayudamos con la gestión del mismo, sin embargo te sugerimos guardar tu dinero en una institución que brinde o te proporcione una tarjeta de débito, como un banco.",
     },
     {
       question: "¿Es gratis usar la app?",

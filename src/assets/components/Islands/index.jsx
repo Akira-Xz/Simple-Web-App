@@ -63,7 +63,7 @@ const Islands = () => {
   const clouds = useMemo(() => generateClouds(isMobile), [isMobile]);
 
   return (
-    <div className="relative bg-[#09C4FF] w-full h-[130vh] md:h-screen overflow-hidden">
+    <div className="relative bg-[#09C4FF] w-full h-[130vh] md:h-[120vh] overflow-hidden">
       {/* Clouds flotantes */}
       {clouds.map((cloud) => (
         <img

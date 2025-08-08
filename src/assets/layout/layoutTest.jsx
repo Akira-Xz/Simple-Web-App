@@ -53,38 +53,35 @@ const LayoutTest = (props) => {
   }, []);
   const scrollRef = useRef(null); // referencia al scroll container
 
+  useEffect(() => {
+    if (!scrollRef.current) return;
 
-useEffect(() => {
-  if (!scrollRef.current) return;
+    const width = window.innerWidth;
+    let lerpValue = 0.15;
 
-  const width = window.innerWidth;
-  let lerpValue = 0.15;
+    if (width >= 1440) {
+      // PC/monitor grande
+      lerpValue = 0.08;
+    } else if (width >= 1024 && width < 1440) {
+      // Laptop
+      lerpValue = 0.14; // más fluido pero sin tanto delay
+    } else {
+      // Tablet/móvil
+      lerpValue = 0.1;
+    }
 
-  if (width >= 1440) {
-    // PC/monitor grande
-    lerpValue = 0.08;
-  } else if (width >= 1024 && width < 1440) {
-    // Laptop
-    lerpValue = 0.14; // más fluido pero sin tanto delay
-  } else {
-    // Tablet/móvil
-    lerpValue = 0.1;
-  }
+    const scroll = new LocomotiveScroll({
+      el: scrollRef.current,
+      smooth: true,
+      lerp: lerpValue,
+      tablet: { smooth: true, lerp: 0.12 },
+      smartphone: { smooth: true, lerp: 0.12 },
+    });
 
-  const scroll = new LocomotiveScroll({
-    el: scrollRef.current,
-    smooth: true,
-    lerp: lerpValue,
-    tablet: { smooth: true, lerp: 0.12 },
-    smartphone: { smooth: true, lerp: 0.12 },
-  });
+    setTimeout(() => scroll.update(), 500);
 
-  setTimeout(() => scroll.update(), 500);
-
-  return () => scroll.destroy();
-}, []);
-
-
+    return () => scroll.destroy();
+  }, []);
 
   return (
     <>
@@ -94,14 +91,16 @@ useEffect(() => {
         className="mx-auto max-w-[1990px]"
       >
         <div
-          className="bg-cover bg-no-repeat bg-center h-[100vh]"
+          className="bg-cover bg-no-repeat bg-center h-[100vh] "
           style={{
-            height: `${maxHeight+200}px`,
+            height: `${maxHeight + 200}px`,
             backgroundImage: `url(${fondo_1})`,
           }}
         >
           <Navbar />
-          <Principal />
+          <div className="flex flex-col items-center">
+            <Principal />
+          </div>
         </div>
 
         <Quote />
@@ -114,7 +113,7 @@ useEffect(() => {
 
         <CoinsSection />
 
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

@@ -49,7 +49,7 @@ const Footer = () => {
   const clouds = useMemo(() => generateClouds(isMobile), [isMobile]);
 
   return (
-    <div className="relative h-[200vh] md:h-screen flex flex-col items-center  justify-between bg-blueSimple z-10 overflow-hidden">
+    <div className="relative h-[200vh] md:h-[130vh] flex flex-col items-center  justify-between bg-blueSimple z-10 overflow-hidden">
       {clouds.map((cloud) => (
         <img
           key={cloud.id}
@@ -98,16 +98,16 @@ const Footer = () => {
           <img src={logo1} alt="Simple Logo" className="mb-4" />
           <p className="text-[black] font-poppins mb-4">Conoce más</p>
           <div className="flex gap-3 my-4 justify-start">
-            <a href="#" className="text-[black]">
+            <a href="https://www.tiktok.com/@app_simple" target="_blank" className="text-[black]">
               <img src={tiktok} alt="" />
             </a>
-            <a href="#" className="text-[black]">
+            <a href="https://www.instagram.com/simple_app_/" target="_blank" className="text-[black]">
               <img src={insta1} alt="" />
             </a>
-            <a href="#" className="text-[black]">
+            <a href="https://www.facebook.com/lappsimple" target="_blank" className="text-[black]">
               <img src={face1} alt="" />
             </a>
-            <a href="#" className="text-[black]">
+            <a href="https://www.youtube.com/@app_simple" target="_blank" className="text-[black]">
               <img src={youtube} alt="" />
             </a>
             <a href="#" className="text-[black]">
@@ -117,7 +117,7 @@ const Footer = () => {
           <button className="bg-transparent rounded-3xl text-[black] font-bold w-[256px] h-[3rem] mb-[3%] border-[3px] border-[black] hover:bg-[#4C4C4C] hover:bg-opacity-50">
             Descargar App
           </button>
-          <p className="text-[black] text-lg px-[15%] sm:px-[0]">
+          <p className="text-[black] text-lg px-[15%] sm:px-[0] mb-[10px]">
             © 2025 SimpleApp. Todos los derechos reservados.
           </p>
         </div>
