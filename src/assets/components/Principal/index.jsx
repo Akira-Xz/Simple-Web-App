@@ -8,24 +8,24 @@ const Principal = () => {
     <div className=" md:grid grid-cols-1 md:grid-cols-3 items-center justify-items-center px-8 py-[48px] relative mt-[50px] md:mt-[100px]">
       {/* Columna 1: Texto AHORRAR y ES */}
       <div className="col-span-1 text-white font-bold text-center relative">
-        <div className="text-6xl sm:text-8xl md:text-9xl leading-none absolute top-[-90px] left-[-120px] md:top-[-430px] md:left-[150px]">
+        <div className="text-6xl md:text-8xl 2xl:text-9xl  leading-none absolute md:left-[90px] 2xl:left-[150px] top-[-90px]  md:top-[-430px] ">
           AHORRAR
         </div>
-        <div className="text-6xl sm:text-8xl md:text-9xl leading-none absolute top-[90px] left-[-125px] sm:top-[100px] sm:left-[-120px] md:top-[-50px] md:left-[250px] transform -translate-y-[200%]">
+        <div className="text-6xl md:text-8xl 2xl:text-9xl eading-none absolute md:left-[180px] 2xl:left-[250px] top-[100px] md:top-[-150px] 2xl:top-[-60px]  sm:left-[-120px] transform -translate-y-[200%]">
           ES
         </div>
 
-        <div className="w-[67px]  ">
+        <div className="md:w-[20px] xl:w-[67px]  ">
           <img
             src={perfil}
             alt=""
-            className="w-[100%] absolute top-[50px] left-[-120px] sm:left-8  md:hidden"
+            className=" w-[70px] xl:w-[100%] absolute top-[50px] sm:left-8 md:left-[20px] 2xl:left-[-120px]  md:hidden"
           />
         </div>
 
         <div className="md:hidden flex flex-col leading-none absolute top-[530px] left-[-125px]  md:top-[-50px] md:left-[250px] transform -translate-y-[200%]">
-          <img src={qrcode} alt="QR Code" className="w-[59px] bg-white p-1" />
-          <p className="text-sm sm:text-lg text-left font-medium">
+          <img src={qrcode} alt="QR Code" className="w-[59px] ml-[110px] bg-white p-1" />
+          <p className="text-sm sm:text-lg text-left font-medium ml-[110px] pt-[10px]">
             Un QR.
             <br />
             Una app.
@@ -36,16 +36,16 @@ const Principal = () => {
       </div>
 
       {/* Columna 2: Teléfono */}
-      <div className="col-span-1 z-20">
+      <div className="col-span-1 z-20 mt-[-60px] ml-[50px] md:mt-[-120px] md:ml-[-100px] 2xl:mt-0 2xl:ml-0">
         <img
           src={devicenoshadow}
           alt="Phone App"
-          className="w-64 sm:w-80 max-w-full mt-[-50px] ml-[40px] md:ml-0"
+          className="md:w-[300px] 2xl:w-[345px] ml-[20px] md:ml-0"
         />
       </div>
 
       {/* Columna 3: Texto SLIDE + QR */}
-      <div className=" col-span-1 text-white justify-items-left text-center transform -translate-x-[10%]">
+      <div className="w-[500px] md:w-[130%] text-white justify-items-left text-center transform -translate-x-[10%]  mt-[-30px] md:mt-0">
         <img
           src={perfil}
           alt=""
@@ -53,15 +53,15 @@ const Principal = () => {
         />
 
         {/* Sliding text */}
-        <div className="h-[101px] overflow-hidden mb-4 ml-[120px] md:ml-0">
+        <div className="h-[105px] overflow-hidden mb-4  md:ml-0 pl-[40px] md:pl-0">
           <div className="flex flex-col animate-slide">
-            <div className="h-[100px] flex items-center justify-start  text-6xl sm:text-8xl md:text-9xl font-bold text-left">
+            <div className="h-[100px] flex items-center justify-start text-6xl md:text-8xl 2xl:text-9xl  2xl:text font-bold text-left">
               DIVERTIDO
             </div>
-            <div className="h-[100px] flex items-center justify-start  text-6xl sm:text-8xl md:text-9xl font-bold  text-left">
+            <div className="h-[100px] flex items-center justify-start text-6xl md:text-8xl 2xl:text-9xl  font-bold  text-left">
               INTELIGENTE
             </div>
-            <div className="h-[100px] flex items-center justify-start  text-6xl sm:text-8xl md:text-9xl font-bold  text-left">
+            <div className="h-[100px] flex items-center justify-start text-6xl md:text-8xl 2xl:text-9xl  font-bold  text-left">
               SIMPLE
             </div>
           </div>

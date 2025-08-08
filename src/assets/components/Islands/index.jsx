@@ -8,17 +8,31 @@ import island4 from "../../img/island4.png";
 import island5 from "../../img/island5.png";
 import apple from "../../img/apple.webp";
 import playstore from "../../img/playstore.webp";
+import { useMediaQuery } from "@mui/material";
 
 const NUM_CLOUDS = 25;
 
-const generateClouds = () => {
+const generateClouds = (isMobile) => {
   const clouds = [];
   for (let i = 0; i < NUM_CLOUDS; i++) {
+    let top = Math.random() * 100;
+
+    // Evita el rango central (35%–65%)
+    if (isMobile) {
+      while (top >= 0 && top <= 18) {
+        top = Math.random() * 100;
+      }
+    } else {
+      while (top >= 15 && top <= 35) {
+        top = Math.random() * 100;
+      }
+    }
+
     clouds.push({
       id: i,
-      top: Math.random() * 95,
+      top,
       left: Math.random() * 95,
-      width: Math.floor(Math.random() * 120) + 30, // 30px a 50px
+      width: Math.floor(Math.random() * 120) + 30, // 30px a 150px
       duration: Math.random() * 5 + 3,
       delay: Math.random() * 3,
       image: Math.random() > 0.5 ? cloud1 : cloud2,
@@ -36,11 +50,20 @@ const islandData = [
   { src: island5, top: "10%", left: "83%", width: 320 },
 ];
 
+const islandDataResponsive = [
+  { src: island1, top: "45%", left: "10%", width: 150 },
+  { src: island2, top: "66%", left: "15%", width: 150 },
+  { src: island3, top: "80%", left: "40%", width: 150 },
+  { src: island4, top: "63%", left: "52%", width: 170 },
+  { src: island5, top: "40%", left: "55%", width: 150 },
+];
+
 const Islands = () => {
-  const clouds = useMemo(generateClouds, []);
+  const isMobile = useMediaQuery("(max-width:639px)");
+  const clouds = useMemo(() => generateClouds(isMobile), [isMobile]);
 
   return (
-    <div className="relative bg-[#09C4FF] w-full h-screen overflow-hidden">
+    <div className="relative bg-[#09C4FF] w-full h-[130vh] md:h-screen overflow-hidden">
       {/* Clouds flotantes */}
       {clouds.map((cloud) => (
         <img
@@ -58,25 +81,49 @@ const Islands = () => {
       ))}
 
       {/* Islas fijas */}
-      {islandData.map((island, index) => (
-        <img
-          key={`island-${index}`}
-          src={island.src}
-          alt={`island-${index + 1}`}
-          style={{
-            top: island.top,
-            left: island.left,
-            width: `${island.width}px`,
-            animation: `floatY ${5 + (index % 3)}s ease-in-out ${
-              index * 0.3
-            }s infinite alternate`,
-          }}
-          className="absolute pointer-events-none"
-        />
-      ))}
+      {isMobile ? (
+        <>
+          {" "}
+          {islandDataResponsive.map((island, index) => (
+            <img
+              key={`island-${index}`}
+              src={island.src}
+              alt={`island-${index + 1}`}
+              style={{
+                top: island.top,
+                left: island.left,
+                width: `${island.width}px`,
+                animation: `floatY ${5 + (index % 3)}s ease-in-out ${
+                  index * 0.3
+                }s infinite alternate`,
+              }}
+              className="absolute pointer-events-none"
+            />
+          ))}
+        </>
+      ) : (
+        <>
+          {islandData.map((island, index) => (
+            <img
+              key={`island-${index}`}
+              src={island.src}
+              alt={`island-${index + 1}`}
+              style={{
+                top: island.top,
+                left: island.left,
+                width: `${island.width}px`,
+                animation: `floatY ${5 + (index % 3)}s ease-in-out ${
+                  index * 0.3
+                }s infinite alternate`,
+              }}
+              className="absolute pointer-events-none"
+            />
+          ))}
+        </>
+      )}
 
-      <div className="absolute top-[-200px] left-0 w-full h-full flex flex-col items-center justify-center text-white text-center px-4 z-10">
-        <h1 className="text-[70px]  font-bold drop-shadow-lg">
+      <div className="absolute top-[-320px] md:top-[-200px] left-0 w-full h-full flex flex-col items-center justify-center text-white text-center px-4 z-10">
+        <h1 className="text-4xl md:text-7xl  font-bold drop-shadow-lg ">
           Finanzas a tu ritmo,
           <br />
           sin horarios ni fronteras

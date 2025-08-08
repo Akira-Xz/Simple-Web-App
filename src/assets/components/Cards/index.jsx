@@ -1,18 +1,17 @@
-import luca1 from "../../img/luca1.webp";
-import luca4 from "../../img/luca4.webp";
-import luca2 from "../../img/luca2.webp";
+import lucaauto from "../../img/lucaauto.gif";
+import lucalentes from "../../img/lucalentes.gif";
+import lucasaluda from "../../img/lucasaluda.gif";
 const Cards = () => {
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-20 items-center justify-items-center mt-[10%] mb-[15%]">
       {/* Tarjeta 1 */}
-      <article className="text-center  md:hover:scale-[105%] transition-transform duration-300">
-        <figure>
-          <img
-            src={luca1}
-            alt="Personaliza tu experiencia financiera"
-            className="w-48 h-auto rounded-lg mx-auto"
-          />
-        </figure>
+      <article className="text-center  md:hover:scale-[105%] transition-transform duration-300 ">
+        <img
+          src={lucaauto}
+          alt="Personaliza tu experiencia financiera"
+          className="w-[70%] rounded-lg mx-auto "
+        />
+
         <header>
           <h3 className="mt-2 text-2xl font-semibold font-poppins">
             A tu ritmo.
@@ -26,14 +25,13 @@ const Cards = () => {
       </article>
 
       {/* Tarjeta 2 */}
-      <article className="text-center md:hover:scale-[105%] transition-transform duration-300">
-        <figure>
-          <img
-            src={luca4}
-            alt="Soporte financiero constante"
-            className="w-48 h-auto rounded-lg mx-auto"
-          />
-        </figure>
+      <article className="text-center md:hover:scale-[105%] transition-transform duration-300 ">
+        <img
+          src={lucalentes}
+          alt="Soporte financiero constante"
+          className="w-[50%] h-auto rounded-lg mx-auto "
+        />
+
         <header>
           <h3 className="mt-2 text-2xl font-semibold font-poppins">
             Estamos contigo
@@ -46,14 +44,13 @@ const Cards = () => {
       </article>
 
       {/* Tarjeta 3 */}
-      <article className="text-center  md:hover:scale-[105%] transition-transform duration-300">
-        <figure>
-          <img
-            src={luca2}
-            alt="App de finanzas simples"
-            className="w-48 h-auto rounded-lg mx-auto"
-          />
-        </figure>
+      <article className="text-center  md:hover:scale-[105%] transition-transform duration-300 ">
+        <img
+          src={lucasaluda}
+          alt="App de finanzas simples"
+          className="w-[50%] h-auto rounded-lg mx-auto"
+        />
+
         <header>
           <h3 className="mt-2 text-2xl font-semibold font-poppins">
             Finanzas simples

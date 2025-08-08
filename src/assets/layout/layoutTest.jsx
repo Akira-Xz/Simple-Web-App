@@ -68,7 +68,7 @@ useEffect(() => {
     lerpValue = 0.14; // más fluido pero sin tanto delay
   } else {
     // Tablet/móvil
-    lerpValue = 0.12;
+    lerpValue = 0.1;
   }
 
   const scroll = new LocomotiveScroll({
@@ -96,7 +96,7 @@ useEffect(() => {
         <div
           className="bg-cover bg-no-repeat bg-center h-[100vh]"
           style={{
-            height: `${maxHeight}px`,
+            height: `${maxHeight+200}px`,
             backgroundImage: `url(${fondo_1})`,
           }}
         >

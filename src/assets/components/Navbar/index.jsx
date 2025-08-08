@@ -6,7 +6,7 @@ export const Navbar = () => {
   const isMobile = useMediaQuery("(max-width:639px)");
 
   return (
-    <nav className="justify-between flex p-12 items-center ">
+    <nav className="justify-between flex px-10 py-5 md:p-12 items-center ">
       <a href="#">
         <img src={logo2} alt="Logo" className="sm:w-32 w-24" />
       </a>

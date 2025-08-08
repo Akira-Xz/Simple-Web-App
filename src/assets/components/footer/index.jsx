@@ -4,36 +4,96 @@ import twitter1 from "../../img/twitter1.webp";
 import tiktok from "../../img/tiktok.webp";
 import youtube from "../../img/youtube.webp";
 import logo1 from "../../img/logo1.webp";
-
+import cloud1 from "../../img/cloud1.png";
+import cloud2 from "../../img/cloud2.png";
 import end from "../../img/end.png";
 import terminos from "../../Documentos/terminos.pdf";
 import privacidad from "../../Documentos/privacidad.pdf";
+import { useMemo } from "react";
+import { useMediaQuery } from "@mui/material";
+
+const NUM_CLOUDS = 25;
+
+const generateClouds = (isMobile) => {
+  const clouds = [];
+  for (let i = 0; i < NUM_CLOUDS; i++) {
+    let top = Math.random() * 100;
+
+    // Evita el rango central (35%–65%)
+    if (isMobile) {
+      while (top >= 0 && top <= 38) {
+        top = Math.random() * 100;
+      }
+    } else {
+      while (top >= 0 && top <= 20) {
+        top = Math.random() * 100;
+      }
+    }
+
+    clouds.push({
+      id: i,
+      top,
+      left: Math.random() * 95,
+      width: Math.floor(Math.random() * 120) + 30, // 30px a 150px
+      duration: Math.random() * 5 + 3,
+      delay: Math.random() * 3,
+      image: Math.random() > 0.5 ? cloud1 : cloud2,
+    });
+  }
+  return clouds;
+};
+
 const Footer = () => {
+  const isMobile = useMediaQuery("(max-width:639px)");
+
+  const clouds = useMemo(() => generateClouds(isMobile), [isMobile]);
+
   return (
-    <div className="relative md:h-[1100px] mt-[2%] flex flex-col items-center h-[2330px] bg-blueSimple z-10 overflow-hidden">
+    <div className="relative h-[200vh] md:h-screen flex flex-col items-center  justify-between bg-blueSimple z-10 overflow-hidden">
+      {clouds.map((cloud) => (
+        <img
+          key={cloud.id}
+          src={cloud.image}
+          alt="cloud"
+          style={{
+            top: `${cloud.top}%`,
+            left: `${cloud.left}%`,
+            width: `${cloud.width}px`,
+            animation: `floatX ${cloud.duration}s ease-in-out ${cloud.delay}s infinite alternate`,
+          }}
+          className="absolute pointer-events-none z-[-2]" // detrás de end.png
+        />
+      ))}
+
       {/* Imagen al fondo */}
       <img
         src={end}
         alt="footer"
-        className="absolute bottom-0 left-[-3px]  object-fill z-0"
+        className="
+    pointer-events-none select-none
+    absolute bottom-0 left-1/2 -translate-x-1/2
+    w-[600%] md:w-full max-w-none
+    z-[-1] // encima de las nubes pero detrás del contenido
+  "
       />
 
-      <h1 className="text-white font-bold leading-relaxed text-5xl sm:text-7xl pt-[5%] pb-[3%] px-[4%] text-center font-poppins md:px-[25%] z-10">
-        Ya diste el primer paso, ahora ve por más
-      </h1>
+      <div className=" flex flex-col items-center pt-[20px] md:pt-0 px-[10px] md:px-[350px] 2xl:pt-[40px] gap-[20px] justify-center">
+        <h1 className="text-white font-bold leading-relaxed text-[44px] md:text-[60px] 2xl:text-[80px]  text-center font-poppins ">
+          Ya diste el primer paso, ahora ve por más
+        </h1>
 
-      <p className="text-white font-regular leading-relaxed text-xl pb-[2%] px-[15%] text-center font-poppins sm:px-[35%]">
-        Cursos para aprender a ahorrar e invertir, aprender a ahorrar es solo el
-        comienzo. Descubre nuestros cursos en Udemy y domina tus finanzas con
-        contenido práctico, útil y hecho para ti.
-      </p>
+        <p className="text-white font-regular leading-relaxed text-xl  text-center font-poppins ">
+          Cursos para aprender a ahorrar e invertir, aprender a ahorrar es solo
+          el comienzo. Descubre nuestros cursos en Udemy y domina tus finanzas
+          con contenido práctico, útil y hecho para ti.
+        </p>
 
-      <button className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px] mb-[800px] h-[3.5rem] md:mb-[15%]">
-        Saber más
-      </button>
+        <button className="bg-white rounded-3xl text-[#1685FE] font-bold w-[256px]  h-[3.5rem] ">
+          Saber más
+        </button>
+      </div>
 
-        <div className="flex flex-col sm:flex-row sm:grid sm:grid-cols-2 gap-10 justify-around w-full z-10">
-        {/* Simple Logo Section */}
+      <div className="flex flex-col sm:flex-row sm:grid sm:grid-cols-2 gap-10 justify-around w-full">
         <div className="flex flex-col items-start text-left sm:items-start sm:text-left px-[20%]">
           <img src={logo1} alt="Simple Logo" className="mb-4" />
           <p className="text-[black] font-poppins mb-4">Conoce más</p>

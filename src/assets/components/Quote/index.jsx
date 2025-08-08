@@ -1,7 +1,8 @@
+import escalera from "../../img/Escalera.svg";
 const Quote = () => {
   return (
     <div
-      className="relative flex px-4 sm:px-8 md:px-12 mt-[100px] gap-[20px] font-semibold leading-snug"
+      className="relative flex px-4 sm:px-8 md:px-12 md:mt-[100px] gap-[20px] font-semibold leading-snug "
       data-scroll
     >
       {/* Contenedor de texto (con altura grande para generar scroll) */}
@@ -9,17 +10,21 @@ const Quote = () => {
         <div className="h-[300dvh] flex flex-col justify-between py-[50px]">
           <div className="h-screen flex items-center">
             <h5>
-              Ahorrar no es solo{" "}
-              <span className="italic font-normal">guardar dinero</span>. Es{" "}
+              <span className="italic font-bold">Ahorrar </span>{" "}
+              <span className="italic font-normal">
+                no es solo guardar dinero. Es{" "}
+              </span>
               <span className="italic font-bold">construir</span> la vida que
               quieres.
             </h5>
           </div>
           <div className="h-screen flex items-center">
             <h5>
-              <span className="italic font-normal">¿Quién quieres ser</span>, y
-              cómo pueden tus finanzas ayudarte a llegar{" "}
-              <span className="italic font-bold">ahí</span>?
+              <span className="italic font-bold">¿Quién quieres ser</span>,
+              <span className="italic font-normal">
+                {" "}
+                y cómo pueden tus finanzas ayudarte a llegar ahí ?
+              </span>
             </h5>
           </div>
           <div className="h-screen flex items-center">
@@ -45,6 +50,14 @@ const Quote = () => {
             data-scroll-target="#sticky-container"
             className=" h-screen w-full flex items-center justify-center"
           >
+            <img
+              src={escalera}
+              data-scroll
+              className="absolute mt-[90%]  md:mt-[70%] py-[70%] w-[70%] md:w-[30%] z-[-1]"
+              data-scroll-direction="vertical"
+              data-scroll-speed={5}
+            ></img>
+
             <iframe
               src="/animations/luca-escalando.html"
               title="Animación Luca"
